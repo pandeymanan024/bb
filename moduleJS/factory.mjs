@@ -1,4 +1,4 @@
-import { RegisterBusinessObject, OtpValidate, ResetPassword,ForgotPassword, LoginBusinessObject, ImageStore } from "../moduleJS/bussinessObject.mjs";
+import { RegisterBusinessObject, OtpValidate, ResetPassword,ForgotPassword, LoginBusinessObject, ImageStore, Cart } from "../moduleJS/bussinessObject.mjs";
 import { Constants } from "../moduleJS/constants.mjs";
 
 export class Factory {
@@ -42,6 +42,14 @@ export class Factory {
       this.forgot = new ForgotPassword();
     }
     return this.forgot;
+  }
+
+  static cart = "";
+  static cartObject() {
+    if (this.cart == "") {
+      this.cart = new Cart();
+    }
+    return this.cart;
   }
 
   static passwordReset = "";
