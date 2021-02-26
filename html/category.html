@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Category Page">
+
+	<title>Category Page</title>  
+
+	<!--------------linking css file-------------------->
+
+
+    <link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+	<link rel="stylesheet" type="text/css" href="../css/category.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" 
+    href= 
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<header class="head">
+
+        <nav class="mob">
+
+            <ul class="mob-nav">
+
+                <li><a class="mob-icon" href="#"><i class="fa fa-bars" aria-label="Menu"></i></a></li>
+                <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
+                <li><a class="mob-icon" href="#"><i class="fa fa-user" aria-label="User Profile"></i></a></li>
+                <li><a class="mob-icon" href="#"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+                <li><a class="mob-icon" href="#"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="logo">
+
+            <img src="../resources/logo.jpg" alt="website logo">
+            
+        </div>
+
+        <div class="search-bar">
+
+            <form>
+
+                <input type="text" id="search" autocomplete="on" autofocus="on" name="search" placeholder="Search Product" aria-label="search"/>
+
+                <button id="search-product" aria-label="search product">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+            </form>
+
+        </div>
+        
+        <div class="nav-menu">
+
+            <ul class="nav-list">
+
+                <li class="nav-item"><a href="../html/lg.html" class="nav-link">Sign In</a></li>
+                <li class="nav-item"><a href="../html/register1.html" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a href="#foot" class="nav-link">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-basket" aria-label="Cart"></i>
+        </div> 
+
+    </header>
+
+    <!----------------------------------- Navigation Bar ----------------------------------->
+
+    <nav class="nav-container">
+
+        <ul class="ul-class">
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Categories</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Fruits</a>
+                        <a href="">Vegetables</a>
+                        <a href="">Gourmet & World Food</a>
+                        <a href="">Grains</a>
+                        <a href="">Drinks</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Vegetables</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Potato, Onion & Tomato</a>
+                        <a href="">Root Vegetables</a>
+                        <a href="">Cabbage & Cauliflower</a>
+                        <a href="">Beans & Drumsticks</a>
+                        <a href="">Organic Store</a>
+                    
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Fruits</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Banana</a>
+                        <a href="">Apples</a>
+                        <a href="">Papaya</a>
+                        <a href="">Kiwi, Melon & Citrus Fruits</a>
+                        <a href="">Seasonal Fruits</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Gourmet & World Food</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Biscuits & Cookies</a>
+                        <a href="">Breakfast Cereals</a>
+                        <a href="">Ice Cream & Desserts</a>
+                        <a href="">Chocolates</a>
+                        <a href="">Dairy & Cheese</a>
+
+                    </div>    
+                
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Grains</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Atta, Sooji & Flours</a>
+                        <a href="">Dal & Pulses</a>
+                        <a href="">Rice & Rice Products</a>
+                        <a href="">Salt, Sugar & Jaggery</a>
+                        <a href="">Masala & Spices</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Drinks</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Energy Drinks</a>
+                        <a href="">Tea & Coffee</a>
+                        <a href="">Health Drinks</a>
+                        <a href="">Fruit Juices</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!----------------------Product Container and Side Bar------------------>
+
+    <div class="container">
+        
+        <aside class="side-bar">
+
+            <form>
+
+                <div class="side-box">
+
+                    <div> 
+
+                        <label for="brand-input">Brand</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="brand-input" placeholder="Search by Brand">
+                        <button aria-label="brandsearch" name="button-search3" ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+
+                    </div>
+
+                    <div class="brand-scroll">
+
+                        <label for="brand-chkbox1"><input type="checkbox" name="brand-chkbox1" id="brand-chkbox1" value="nestle"/>Nestle</label>
+
+                        <label for="brand-chkbox2"><input type="checkbox" name="brand-chkbox2" id="brand-chkbox2" value="everest"/> Everest</label>
+
+                        <label for="brand-chkbox3"><input type="checkbox" name="brand-chkbox3" id="brand-chkbox3" value="cadbury"/> Cadbury</label>
+
+                        <label for="brand-chkbox4"><input type="checkbox" name="brand-chkbox4" id="brand-chkbox4" value="mdh"/> MDH</label>
+
+                        <label for="brand-chkbox5"><input type="checkbox" name="brand-chkbox5" id="brand-chkbox5" value="kellogs"/> Kellog's</label>
+
+                        <label for="brand-chkbox6"><input type="checkbox" name="brand-chkbox6" id="brand-chkbox6" value="catch"/> Catch</label>
+
+                        <label for="brand-chkbox7"><input type="checkbox" name="brand-chkbox7" id="brand-chkbox7" value="tata"/> Tata</label>
+
+                    </div>
+                </div>
+
+                <div class="side-box">
+
+                    <div> 
+
+                        <label for="seasonal-input">Seasonal</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="seasonal-input" placeholder="Search by Seasonal" >
+                        <button aria-label="seasonalsearch" name="button-search4"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                    
+                    </div>
+
+                    <div class="brand-scroll">
+                    
+                        <label for="seasonal-chkboxbox1"><input type="checkbox" name="seasonal-chkboxbox1" id="seasonal-chkboxbox1" value="winter"/> Winter</label>
+
+                        <label for="seasonal-chkboxbox2"><input type="checkbox" name="seasonal-chkboxbox2" id="seasonal-chkboxbox2" value="autumn"/> Autumn</label>
+
+                        <label for="seasonal-chkboxbox3"><input type="checkbox" name="seasonal-chkboxbox3" id="seasonal-chkboxbox3" value="spring"/> Spring</label>
+
+                        <label for="seasonal-chkboxbox4"><input type="checkbox" name="seasonal-chkboxbox4" id="seasonal-chkboxbox4" value="summer"/> Summer</label>
+
+                        <label for="seasonal-chkboxbox5"><input type="checkbox" name="seasonal-chkboxbox5" id="seasonal-chkboxbox5" value="monsoon"/> Monsoon</label>
+
+                        <label for="seasonal-chkboxbox6"><input type="checkbox" name="seasonal-chkboxbox6" id="seasonal-chkboxbox6" value="pooja"/> Pooja Items</label>
+
+                        <label for="seasonal-chkboxbox7"><input type="checkbox" name="seasonal-chkboxbox7" id="seasonal-chkboxbox7" value="weekends"/> Weekends</label>
+
+                    </div>
+            
+                </div>
+
+                <div class="side-box">
+
+                    <div>
+
+                        <label for="origin-input">Origin</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="origin-input" placeholder="Search by Origin">
+                        <button aria-label="originsearch" name="button-search5" ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                
+                    </div>
+
+                
+                    <div class="brand-scroll">
+                    
+                        <label for="origin1"><input type="checkbox" name="originbox1" id="origin1" value="australia"/> Australia</label>
+
+                        <label for="origin2"><input type="checkbox" name="originbox2" id="origin2" value="india"/> India</label>
+
+                        <label for="origin3"><input type="checkbox" name="originbox3" id="origin3" value="america"/> America</label>
+
+                        <label for="origin4"><input type="checkbox" name="originbox4" id="origin4" value="new-zealand"/> New Zealand</label>
+
+                        <label for="origin5"><input type="checkbox" name="originbox5" id="origin5" value="china"/> China</label>
+
+                        <label for="origin6"><input type="checkbox" name="originbox6" id="origin6" value="europe"/> Europe</label>
+
+                        <label for="origin7"><input type="checkbox" name="originbox7" id="origin7" value="england"/> England</label>
+                    
+                    </div>
+                
+                </div>
+
+                <div class="side-box">
+                
+                    <div> 
+                        
+                        <label for="price-input">Price</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="price-input" placeholder="Search by Price" >
+                        <button aria-label="pricesearch" name="button-search6"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                
+                    </div>
+
+                    <div class="brand-scroll">
+                    
+                        <label for="price-chk1"><input type="checkbox" name="prchkbox1" id="price-chk1" value="lessthan20"/> Less than Rs 20</label>
+
+                        <label for="price-chk2"><input type="checkbox" name="prchkbox2" id="price-chk2" value="btw20-50"/> Rs 20 to Rs 50</label>
+
+                        <label for="price-chk3"><input type="checkbox" name="prchkbox3" id="price-chk3" value="btw50-100"/> Rs 50 to Rs 100</label>
+
+                        <label for="price-chk4"><input type="checkbox" name="prchkbox4" id="price-chk4" value="btw100-500"/> Rs 100 to Rs 500</label>
+
+                        <label for="price-chk5"><input type="checkbox" name="prchkbox5" id="price-chk5" value="btw500-1000"/> Rs 500 to Rs 1000</label>
+
+                        <label for="price-chk6"><input type="checkbox" name="prchkbox6" id="price-chk6" value="btw1000-2500"/> Rs 1000 to Rs 2500</label>
+
+                        <label for="price-chk7"><input type="checkbox" name="prchkbox7d" id="price-chk7" value="morethan2500"/> More than Rs 2500</label>
+
+                    </div>
+                
+                </div>
+
+                <div class="side-box">
+                
+                    <div> 
+
+                        <label for="discount-input">Discount</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="discount-input" placeholder="Search by Discount" >
+                        <button aria-label="discountsearch" name="button-search7"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                    
+                    </div>
+
+                    <div class="brand-scroll">
+                    
+                        <label for="discount-chk1"><input type="checkbox" name="discount-chkbox1" id="discount-chk1" value="5to10"/> 5% - 10%</label>
+
+                        <label for="discount-chk2"><input type="checkbox" name="discount-chkbox2" id="discount-chk2" value="10to20"/> 10% - 20%</label>
+
+                        <label for="discount-chk3"><input type="checkbox" name="discount-chkbox3" id="discount-chk3" value="20to30"/> 20% - 30%</label>
+
+                        <label for="discount-chk4"><input type="checkbox" name="discount-chkbox4" id="discount-chk4" value="30to50"/> 30% - 50%</label>
+
+                        <label for="discount-chk5"><input type="checkbox" name="discount-chkbox5" id="discount-chk5" value="morethan50"/> More than 50%</label>
+                
+                    </div>
+                
+                </div>
+
+                <div class="side-box">
+                
+                    <div> 
+
+                        <label for="pack-input">Pack Size</label>
+                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="pack-input" placeholder="Search by Pack Size" >
+                        <button aria-label="packsearch" name="button-search8"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                
+                    </div>
+
+                    <div class="brand-scroll">
+                    
+                        <label for="pack-chk1"><input type="checkbox" name="pack-chkbox1" id="pack-chk1" value="pack1"/> 1 Pack</label>
+
+                        <label for="pack-chk2"><input type="checkbox" name="pack-chkbox2" id="pack-chk2" value="combo-pack2"/> Combo 2 Pack</label>
+
+                        <label for="pack-chk3"><input type="checkbox" name="pack-chkbox3" id="pack-chk3" value="combo-pack3"/> Combo 3 Pack</label>
+
+                        <label for="pack-chk4"><input type="checkbox" name="pack-chkbox4" id="pack-chk4" value="combo-pack4"/> Combo 4 Pack</label>
+
+                        <label for="pack-chk5"><input type="checkbox" name="pack-chkbox5" id="pack-chk5" value="combo-pack5+"/> Combo 5+ Pack</label>
+                
+                    </div>
+            
+                </div>
+        
+            </form>
+        
+        </aside>
+
+            <!------------------------------Product view here--------------------->
+
+        <main class="product-container">
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP<sup><del> &#8377; 30 </del></sup>&#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <img src="../resources/prod.jpg" alt="maida">
+
+                <h2>BB Royal Maida</h2>
+
+                <div class="details">
+
+                    <p>MRP <sup><del> &#8377; 30 </del></sup> &#8377; 20</p>
+
+                    <p>1 unit (500 g)</p>
+
+                    <button class="cartbutton-search">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <!--Footer starts-->
+
+
+    <footer id="foot">
+
+        <div>
+
+            <ul>
+
+                <li><h3>Big Basket</h3></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">In News</a></li>
+                <li><a href="">Green Basket</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Privacy policy</a></li>
+                <li><a href="">Careers at big basket</a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Help</h3></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">bb Wallet FAQs</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Vendor Contact</a></li>
+                <li><a href="">E-Invoice Compliance for bb</a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Download Our App</h3></li>
+                <li><a href="https://play.google.com/store">
+                    <img src="../resources/gpicon.png" alt="play-store"></a></li>
+                <li><a href="https://www.apple.com/in/app-store/">
+                    <img src="../resources/aicon.png" alt="apple-store"></a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Get Social With Us</h3></li>
+                <li class="dis"><i class="fa fa-facebook-official" aria-label="Facebook Link"></i></li>
+                <li class="dis"><i class="fa fa-pinterest-square" aria-label="Pinterest Link"></i></li>
+                <li class="dis"><i class="fa fa-twitter-square" aria-label="Twitter Link"></i></li>
+
+            </ul>
+
+        </div>
+
+    </footer>
+</body>
+</html>

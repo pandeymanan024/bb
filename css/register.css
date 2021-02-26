@@ -1,0 +1,159 @@
+:root {
+  --bgwhite: #f2f2f2;
+  --bggreen: #339e1bfa;
+  --bodygray: #5a5959;
+  --bodyblack: #000000;
+  --bodywhite: #ffffff;
+  --dropgray: #708090;
+  --footergreen: #215208;
+  --disablegreen: #94cd88fa;
+  --red: #ff0000;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 16px;
+}
+
+input[type=submit],button{
+  cursor: pointer;
+  border: none;
+  opacity: 0.9;
+}
+
+input[type=submit]:hover,button:hover{
+  opacity: 1;
+}
+
+.outer-container{
+  display: grid;
+  width: 470px;
+  border: 2px solid var(--bodyblack);
+  border-radius: 5px;
+  box-shadow: 2px 2px var(--dropgray);
+  margin: 20px auto;
+}
+
+.inner-container{
+  padding-left: 20px;
+}
+
+.inner-container label{
+  display: block;
+  text-align: left;
+  margin-left: 105px;
+}
+
+.form{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.inner-container a:hover, .inner-container a:active{
+  color: var(--bodygray);
+}
+
+.inner-container a{
+  color: var(--bggreen);
+}
+
+/* ----------------------------------Input------------------------------ */
+
+input[type=password],input[type=email],input[type=tel] ,input[type=text]{
+  margin-bottom: 25px;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background: var(--bgwhite);
+}
+
+input[type=password]:focus,input[type=email]:focus,input[type=tel]:focus,input[type=text]:focus{
+  outline: none;
+}
+
+input[type=submit]{
+  background-color: var(--bggreen);
+  color: var(--bgwhite);
+  padding: 15px 30px;
+  margin: auto;
+  display: block;
+}
+
+/* ----------------------------------Validation------------------------------ */
+.fa-eye,.fa-eye-slash{
+  right: 560px;
+  top: 500px;
+  opacity: .6;
+  position: absolute;
+  cursor: pointer;
+} 
+
+.span{
+  color: var(--red);
+}
+
+input:not(:placeholder-shown) {
+  border: 1px solid var(--red);
+}
+
+input:valid{
+  border: 1px solid var(--bggreen);
+}
+
+.address:valid{
+  border:none;
+} 
+
+input[id="submit"]:disabled{
+  background-color:var(--disablegreen);
+  cursor: not-allowed;
+  border:none;
+}
+
+.msg{
+  padding: 10px;
+  color: var(--red);
+}
+
+.pass-instructions{
+  display: none;
+}
+
+.valid {
+  color: var(--bggreen);
+}
+
+.valid:before {
+  content: "✔";
+}
+
+.invalid {
+  color: var(--red);
+}
+
+.invalid:before {
+  content: "✖";
+}
+
+.password-specs {
+  margin-bottom: 16px;
+  border: 1px solid;
+  border-radius: 7px;
+  width: 300px;
+  display: inline-block;  
+  padding: 4px;
+}
+
+.password-specs p{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: left;
+  font-size: 14px;  
+}
+
+.password-specs span{
+  text-align: left;
+  font-size: 14px;
+  margin-left: 50px;
+  display: block;
+}

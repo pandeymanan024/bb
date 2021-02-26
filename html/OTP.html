@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta content="Big Basket OTP Page" name="description">
+  <title>Verify OTP</title>
+  <link rel="stylesheet" type="text/css" href="../css/forgot-password.css">
+
+</head>
+<body>
+
+  <main class="outer-container">
+
+    <div class="inner-container">
+
+      <h1 class="otp-verif">OTP Verification</h1>
+      <a class="sign-in" href="../html/login.html">Go Back to Sign In</a>
+      <p>Please enter the OTP sent to your email</p>
+      <div id="otp-verify"></div>
+      <form class="form" autofocus="on" autocomplete="on">
+
+        <label for="OTP" class="otp">Enter OTP<span class="span">*</span></label>
+        <input id="OTP" type="number" name="otp" placeholder="OTP" maxlength=4 required>
+        <div>
+          <a id="resend">Resend</a>
+          <br>
+          <button type="submit" class="button">Verify OTP</button>
+        </div>
+        
+      </form>
+
+  </main>
+<script type="module" src="../javascript/otp.js"></script>
+</body>
+</html>

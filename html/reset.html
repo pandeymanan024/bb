@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta content="Big Basket Reset Page" name="description">
+	<title>Reset Password</title>
+    <link rel="stylesheet" type="text/css" href="../css/forgot-password.css">
+    
+</head>
+<body>
+
+    <main class="outer-container">
+
+        <div class="inner-container">
+
+          <h1 class="heading">Reset Password</h1>
+          <div id="reset-error"></div>
+          <form class="form" autocomplete="on">
+
+            <label for="email" class="new-pass">Email</label>
+            <input id="email" type="email" class="password" name="email" placeholder="Enter your email" required>
+
+            <label for="new-password" class="new-pass">New Password</label>
+            <input id="new-password" type="password" class="password" name="password" placeholder="Enter new Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
+
+            <label for="conf-password" class="confirm">Confirm Password</label>
+            <input id="conf-password" type="password" class="password" name="confirmPassword" placeholder="Re-Enter Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
+
+            <div id="passhidden" class="pass-instructions">
+                <span>Password should contain at least:</span>
+                <p id="capital" class="invalid">One Uppercase letter</p>
+                <p id="letter" class="invalid">One Lowercase</p>
+                <p id="special" class="invalid">One special character{#?!@$%^&*-}</p>
+                <p id="number" class="invalid">One numeric character</p>
+                <p id="length" class="invalid">8 characters</p>
+            </div>
+
+            <input type="submit" value="Reset Password">
+
+         </form>
+
+        </div>
+    </main>
+    <script type="module" src="../javascript/reset.js"></script>
+
+</body>
+</html>

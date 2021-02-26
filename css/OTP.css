@@ -1,0 +1,111 @@
+:root {
+  --bgwhite: #f2f2f2;
+  --bggreen: #339e1bfa;
+  --bodygray: #5a5959;
+  --bodyblack: #000000;
+  --bodywhite: #ffffff;
+  --dropgray: #708090;
+  --footergreen: #215208;
+}
+
+a{
+    text-decoration: none;
+    padding:5px 0 0 0 ;
+}
+
+a:hover, a:active{
+    color: var(--bggreen);
+}
+
+a:link, a:visited{
+    color: var(--bggreen);
+}
+
+.container{
+    height: 355px;
+    width: 500px;
+    border: 2px solid var(--bodyblack);
+    border-radius: 5px;
+    box-shadow: 2.5px 2.5px var(--bodygray);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+.resend1{
+  margin-top:-25px;
+}
+
+.inner-container{
+	margin-left: 40px;
+}
+
+.form{
+    margin-top: 25px;
+    margin-left:112px;
+}
+
+input{
+	width: 277px;
+    height: 30px;
+    margin-bottom: 34px;
+    display: block;
+    font-size: 16px;
+}
+
+.sign-in{
+  font-family: system-ui;
+  margin-top:-42px;
+  color:2px solid var(--bggreen);
+}
+
+a.sign-in {
+  color:var(--bggreen)
+
+}
+
+.otp-verif{
+  display:block;
+	font-family:system-ui;
+}
+
+.otp{
+  display:block;
+  font-family: system-ui;
+  margin-left:1px;
+}
+button:hover {
+  opacity:1;
+}
+input[type=Password] {
+  width: 50%;
+  height: 80%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background:var(--bgwhite);
+  font-family:system-ui;
+}
+
+input[type=text]:focus, input[type=Username]:focus {
+  background-color: var(--bgwhite);
+  outline: none;
+  font-family:system-ui;
+}
+
+
+button {
+  background-color: var(--bggreen);
+  color: var(--bgwhite);
+  padding: 14px 20px;
+  margin: 11px 0 0 45px;
+  border: none;
+  cursor: pointer;
+  width: 110px;
+  opacity: 0.9;
+  font-family:system-ui;
+}
+.fonf{
+  display: block;
+  font-family: system-ui;
+  margin-top: 26px;}

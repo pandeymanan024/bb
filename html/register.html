@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta content="Big Basket Register Page" name="description" />
+
+    <title>Create An Account</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"/>
+   
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
+
+  </head>
+  <body>
+
+    <main class="outer-container">
+
+      <div class="inner-container">
+
+        <h1 class="sign-up">Sign Up</h1>
+        <a class="sign-in" href="../html/login.html">Go Back to Sign In</a>
+        <div id="message" class="msg"></div>
+
+        <form class="form" id="form-main">
+
+          <label for="name">Full Name<span class="span">*</span></label>
+          <input id="name" type="text" placeholder="Name" name="name" pattern="[A-Za-z\s]+" autofocus="on" required>
+   
+          <label for="phone">Phone<span class="span">*</span></label>
+          <input type="tel" id="phone" placeholder="10-digit mobile number" name="phone" pattern="[6-9]{1}[0-9]{9}"  maxlength= 10
+          required>
+   
+          <label for="email">Email<span class="span">*</span></label>
+          <input id="email" type="email" placeholder="abc@domain.com" name="email" pattern="^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$" required >
+   
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Street/Landmark/City" class="address" name="address">
+   
+          <label for="password">Password<span class="span">*</span></label>
+          <input type="password" id="password" placeholder="Password" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required> 
+          <i id="pass-status" class="fa fa-eye" aria-label="Show Password" onclick="viewPassword()"></i>
+          
+          <div id="passhidden" class="pass-instructions">
+           <span>Password should contain at least:</span>
+           <p id="capital" class="invalid">One Uppercase letter</p>
+           <p id="letter" class="invalid">One Lowercase</p>
+           <p id="special" class="invalid">One special character{#?!@$%^&*-}</p>
+           <p id="number" class="invalid">One numeric character</p>
+           <p id="length" class="invalid">8 characters</p>
+          </div>
+   
+          <input type="submit" value="Submit" id="submit" class="sign-btn">
+          
+        </form>
+
+      </div>
+
+    </main>
+
+  <script type="module" src="../javascript/register.js"></script>
+</body>
+</html>
