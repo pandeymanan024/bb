@@ -1,7 +1,7 @@
 import { LoginController } from "../moduleJS/loginController.mjs";
 
-var eyeicon =document.getElementById('pass-status');
-eyeicon.addEventListener('click',viewPassword);
+var showpass =document.getElementById('pass-status');
+showpass.addEventListener('click',viewPassword);
 
 function viewPassword() {
   var passwordInput = document.getElementById("password");
@@ -9,10 +9,10 @@ function viewPassword() {
 
   if (passwordInput.type == "password") {
     passwordInput.type = "text";
-    passStatus.className = "fa fa-eye-slash";
+    
   } else {
     passwordInput.type = "password";
-    passStatus.className = "fa fa-eye";
+    
   }
 }
 

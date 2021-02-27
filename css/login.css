@@ -14,6 +14,9 @@ body{
   font-family: Arial, Helvetica, sans-serif; 
   font-size: 16px;
 }
+.header{
+  padding-left:20px
+}
 
 input[type=submit],button{
   cursor: pointer;
@@ -36,9 +39,6 @@ input[type=submit]:hover,button:hover{
   padding-bottom: 15px;
 }
 
-.inner-container{
-  padding-left: 20px;
-}
 
 .inner-container label{
   display: block;
@@ -50,7 +50,7 @@ input[type=submit]:hover,button:hover{
   text-align: center;
 }
 
-.form-main span{
+.span{
   color: var(--red);
 }
 
@@ -102,4 +102,16 @@ input[id="submit"]:disabled{
 .msg{
   padding: 10px;
   color: var(--red);
+}
+
+
+.pass-status1{
+  font-size:14px;
+}
+.show-pass{
+  margin-bottom:15px;
+  margin-right:122px;
+}
+input[id="password"]{
+  margin-bottom:6px;
 }

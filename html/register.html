@@ -23,9 +23,11 @@
 
       <div class="inner-container">
 
+        <div class="header">
         <h1 class="sign-up">Sign Up</h1>
         <a class="sign-in" href="../html/login.html">Go Back to Sign In</a>
         <div id="message" class="msg"></div>
+        </div>
 
         <form class="form" id="form-main">
 
@@ -41,15 +43,21 @@
    
           <label for="address">Address</label>
           <input type="text" id="address" placeholder="Street/Landmark/City" class="address" name="address">
-   
+          
           <label for="password">Password<span class="span">*</span></label>
           <input type="password" id="password" placeholder="Password" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required> 
-          <i id="pass-status" class="fa fa-eye" aria-label="Show Password" onclick="viewPassword()"></i>
           
+          <div class="show-pass"> 
+          <input id="pass-status" class="pass-status" type="checkbox" onclick="viewPassword()">
+          <span for="pass-status" class="pass-status1">Show Password</span>
+            
+          </div>
+          <!-- <i id="pass-status" class="fa fa-eye" aria-label="Show Password" onclick="viewPassword()"></i>
+           -->
           <div id="passhidden" class="pass-instructions">
            <span>Password should contain at least:</span>
            <p id="capital" class="invalid">One Uppercase letter</p>
-           <p id="letter" class="invalid">One Lowercase</p>
+           <p id="letter" class="invalid">One Lowercase letter</p>
            <p id="special" class="invalid">One special character{#?!@$%^&*-}</p>
            <p id="number" class="invalid">One numeric character</p>
            <p id="length" class="invalid">8 characters</p>
@@ -63,6 +71,6 @@
 
     </main>
 
-  <script type="module" src="../javascript/register.js"></script>
+  <script type="module"  src="../javaScript/register.js"></script>
 </body>
 </html>

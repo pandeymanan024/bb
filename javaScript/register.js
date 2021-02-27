@@ -38,18 +38,8 @@ function disablebtn(){
 // var eyeicon =document.getElementById('pass-status');
 // eyeicon.addEventListener('click',viewPassword);
 
-function viewPassword() {
-  var passwordInput = document.getElementById("password");
-  var passStatus = document.getElementById("pass-status");
-  
-  if (passwordInput.type == "password") {
-      passwordInput.type = "text";
-      passStatus.className = "fa fa-eye-slash";
-    } else {
-      passwordInput.type = "password";
-      passStatus.className = "fa fa-eye";
-    }
-  }
+//var showpass =document.getElementById('pass-status');
+//showpass.addEventListener('click',viewPassword);
 
 var myInput = document.getElementById("password");
 var letter = document.getElementById("letter");
@@ -73,6 +63,7 @@ myInput.onkeyup = function() {
     letter.classList.remove("valid");
     letter.classList.add("invalid");
   }
+
   
   // Validate capital letters
   var upperCaseLetters = /[A-Z]/g;
@@ -114,6 +105,22 @@ myInput.onkeyup = function() {
  }
 }
 
+var showpass =document.getElementById('pass-status');
+showpass.addEventListener('click',viewPassword);
+
+
+function viewPassword() {
+  var passwordInput = document.getElementById("password");
+  var passStatus = document.getElementById("pass-status");
+
+  if (passwordInput.type == "password") {
+    passwordInput.type = "text";
+    
+  } else {
+    passwordInput.type = "password";
+    
+  }
+}
 //Backend Validation
 var elem = document.querySelector("form");
 elem.addEventListener("submit", (event) => {
