@@ -3,8 +3,10 @@ export class Constants{
         this.DatabaseId;
     }
     static CustomerUrl = "https://bbecom-998a.restdb.io/rest/customer";
+    static UserUrl = "https://users-de8f.restdb.io/rest/system_jobs";
     static MediaUrl = "https://bbecom-998a.restdb.io/media";
     static CustomerApiKey = "602276113f9eb665a1689352";
+    static UserApiKey = "603b382710f29b640ed97bc5";
     static PostMethod = "POST";
     static GetMethod = "GET";
     static PutMethod = "PUT";

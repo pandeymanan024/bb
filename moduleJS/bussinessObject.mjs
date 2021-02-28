@@ -1,6 +1,8 @@
 import { Constants } from "../moduleJS/constants.mjs";
 import { Factory } from "../moduleJS/factory.mjs";
 import { Hashing } from "../moduleJS/hashing.mjs";
+import {CategoryController} from "../moduleJS/categoryController.mjs";
+
 
 export class RegisterBusinessObject {
   constructor() {}
@@ -8,8 +10,8 @@ export class RegisterBusinessObject {
   storeDataBase(formData) {
     this.request = Factory.getHttpRequest(
       Constants.PostMethod,
-      Constants.CustomerUrl,
-      Constants.CustomerApiKey
+      Constants.UserUrl,
+      Constants.UserApiKey
     );
     this.request.onload = () => {};
     this.request.send(JSON.stringify(formData));
@@ -21,8 +23,8 @@ export class RegisterBusinessObject {
       let data = JSON.stringify({ email: formData.email });
       this.request = Factory.getHttpRequest(
         Constants.GetMethod,
-        `${Constants.CustomerUrl}?q=${data}`,
-        Constants.CustomerApiKey
+        `${Constants.UserUrl}?q=${data}`,
+        Constants.UserApiKey
       );
       this.request.onload = () => {
         let response = JSON.parse(this.request.responseText);
@@ -61,8 +63,8 @@ export class LoginBusinessObject {
     const data = JSON.stringify({ email: formData.Username });
     this.request = Factory.getHttpRequest(
       Constants.GetMethod,
-      `${Constants.CustomerUrl}?q=${data}`,
-      Constants.CustomerApiKey
+      `${Constants.UserUrl}?q=${data}`,
+      Constants.UserApiKey
     );
     this.request.onload = () => {
       try {
@@ -99,8 +101,8 @@ export class ForgotPassword {
     const data = JSON.stringify({ email: formData.email });
     this.request = Factory.getHttpRequest(
       Constants.GetMethod,
-      `${Constants.CustomerUrl}?q=${data}`,
-      Constants.CustomerApiKey
+      `${Constants.UserUrl}?q=${data}`,
+      Constants.UserApiKey
     );
     this.request.onload = () => {
       try {
@@ -119,8 +121,8 @@ export class ForgotPassword {
       localStorage.setItem("id", identity);
       this.request = Factory.getHttpRequest(
         Constants.PutMethod,
-        Constants.CustomerUrl + "/" + databaseObject._id,
-        Constants.CustomerApiKey
+        Constants.UserUrl + "/" + databaseObject._id,
+        Constants.UserApiKey
       );
       this.request.onload = () => {
         try {
@@ -157,8 +159,8 @@ export class ResetPassword {
     const data = JSON.stringify({ email: formData.email });
     this.request = Factory.getHttpRequest(
       Constants.GetMethod,
-      `${Constants.CustomerUrl}?q=${data}`,
-      Constants.CustomerApiKey
+      `${Constants.UserUrl}?q=${data}`,
+      Constants.UserApiKey
     );
     this.request.onload = () => {
       try {
@@ -174,8 +176,8 @@ export class ResetPassword {
   putDatabase(databaseId, databaseObject) {
     this.request = Factory.getHttpRequest(
       Constants.PutMethod,
-      Constants.CustomerUrl + "/" + databaseId,
-      Constants.CustomerApiKey
+      Constants.UserUrl + "/" + databaseId,
+      Constants.UserApiKey
     );
     this.request.send(JSON.stringify(databaseObject));
   }
@@ -190,8 +192,8 @@ export class OtpValidate {
   getDatabase(formData) {
     this.request = Factory.getHttpRequest(
       Constants.GetMethod,
-      Constants.CustomerUrl + "/" + localStorage.getItem("id"),
-      Constants.CustomerApiKey
+      Constants.UserUrl + "/" + localStorage.getItem("id"),
+      Constants.UserApiKey
     );
     this.request.onload = () => {
       try {
@@ -224,10 +226,7 @@ export class ImageStore{
 
   }
   getDatabase(formData){
-    this.request = Factory.getMediaHttpRequest(Constants.PostMethod,Constants.MediaUrl,Constants.CustomerApiKey);
-    // this.request = new XMLHttpRequest();
-    // this.request.open('POST','https://bbecom-998a.restdb.io/media',true);
-    // this.request.setRequestHeader('x-apikey','602276113f9eb665a1689352');
+    this.request = Factory.getMediaHttpRequest(Constants.PostMethod,Constants.MediaUrl,Constants.UserApiKey);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
@@ -248,7 +247,7 @@ export class ImageStore{
   }
 
   postData(formData){
-    this.request = Factory.getHttpRequest(Constants.PostMethod,Constants.CustomerUrl,Constants.CustomerApiKey);
+    this.request = Factory.getHttpRequest(Constants.PostMethod,Constants.UserUrl,Constants.UserApiKey);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
@@ -308,5 +307,24 @@ export class Cart{
         })
     }
     f2();
+  }
+}
+
+export class ProductObject{
+  constructor(){
+    this.count=0;
+  }
+  getDatabase(){
+    this.request = Factory.getHttpRequest(
+      Constants.GetMethod,
+      Constants.CustomerUrl,
+      Constants.CustomerApiKey
+    );
+    this.request.onload = ()=>{
+      const response = JSON.parse(this.request.responseText);
+      let con = new CategoryController();
+      con.receiveDataFromModule(response);
+    };
+    this.request.send();
   }
 }
