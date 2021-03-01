@@ -226,7 +226,7 @@ export class ImageStore{
 
   }
   getDatabase(formData){
-    this.request = Factory.getMediaHttpRequest(Constants.PostMethod,Constants.MediaUrl,Constants.UserApiKey);
+    this.request = Factory.getMediaHttpRequest(Constants.PostMethod,Constants.MediaUrl,Constants.CustomerApiKey);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
