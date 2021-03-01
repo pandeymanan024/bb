@@ -97,7 +97,8 @@ body {
 
 .items h2 {
   color: var(--bodygraydark);
-  font-size: 18px;
+  font-size: 15px;
+  margin: 5% 0;
 }
 
 .best-prod:hover,
@@ -122,8 +123,7 @@ body {
 }
 
 .items img{
-  width: 200px;
-  height: 180px;
+  height: 140px;
 }
 
 .cartbtn {

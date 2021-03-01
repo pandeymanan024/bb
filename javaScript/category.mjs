@@ -25,13 +25,13 @@ $(document).ready(function(){
     if(window.location=="http://127.0.0.1:5501/html/category.html"){
     let Obj = new CategoryView();
     Obj.ControllerObject();
-}
+    }
 });
 
 function appendData(response){
     let length = response.length;
     // console.log(length,response);
-    for(let i=counter*25;i<(counter+1)*25;i++){
+    for(let i=counter*length;i<(counter+1)*length;i++){
         console.log(i%length);
         let divMain = document.createElement("div");
         divMain.setAttribute("id",`item${i}`);
@@ -40,14 +40,14 @@ function appendData(response){
         img.src = Constants.MediaUrl + "/" + response[i%length].imageID;
         img.alt = response[i%length].productName;
         let h2 = document.createElement("h2");
-        h2.innerHTML = response[i%length].productName;
+        h2.innerHTML = (response[i%length].productName).toUpperCase();
         let divSub = document.createElement("div");
         divSub.setAttribute("class","details");
         divSub.setAttribute("id",`details${i}`);
         let para1 = document.createElement("p");
         para1.innerHTML =`MRP<sup><del> &#8377; ${Number(response[i%length].price)-10} </del></sup>&#8377; ${response[i%length].price}`;
-        let para2 = document.createElement("p");
-        para2.innerHTML = response[i%length].packSize;
+        // let para2 = document.createElement("p");
+        // para2.innerHTML = response[i%length].packSize;
         let button = document.createElement("button");
         button.setAttribute("class","cartbtn");
         button.innerHTML = "ADD TO CART";
@@ -56,7 +56,7 @@ function appendData(response){
         divMain.appendChild(h2);
         divMain.appendChild(divSub);
         divSub.appendChild(para1);
-        divSub.appendChild(para2);
+        // divSub.appendChild(para2);
         divSub.appendChild(button);
     }
     counter+=1;
