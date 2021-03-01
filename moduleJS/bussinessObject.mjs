@@ -247,7 +247,7 @@ export class ImageStore{
   }
 
   postData(formData){
-    this.request = Factory.getHttpRequest(Constants.PostMethod,Constants.UserUrl,Constants.UserApiKey);
+    this.request = Factory.getHttpRequest(Constants.PostMethod,Constants.CustomerUrl,Constants.CustomerApiKey);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
