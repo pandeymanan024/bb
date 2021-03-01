@@ -1,4 +1,5 @@
 import {CategoryController} from "../moduleJS/categoryController.mjs";
+import {Constants} from "../moduleJS/constants.mjs";
 var counter=0;
 var temp = 750;
 export class CategoryView{
@@ -11,7 +12,7 @@ export class CategoryView{
     productDisplay(response){
         console.log(response);
         appendData(response);
-        $(window).scroll(function(response){
+        $(window).scroll(function(){
             console.log($(window).scrollTop(),$(document).height(),$(window).height(),counter);
             if ($(window).scrollTop()>temp && counter < 3) {
                 appendData(response);
@@ -21,27 +22,32 @@ export class CategoryView{
 }
 
 $(document).ready(function(){
+    if(window.location=="http://127.0.0.1:5501/html/category.html"){
     let Obj = new CategoryView();
     Obj.ControllerObject();
+}
 });
 
 function appendData(response){
-    for(let i=0;i<25;i++){
+    let length = response.length;
+    // console.log(length,response);
+    for(let i=counter*25;i<(counter+1)*25;i++){
+        console.log(i%length);
         let divMain = document.createElement("div");
         divMain.setAttribute("id",`item${i}`);
         divMain.setAttribute("class","items");
         let img = document.createElement("img");
-        img.src = "../resources/prod.jpg";
-        img.alt = "maida";
+        img.src = Constants.MediaUrl + "/" + response[i%length].imageID;
+        img.alt = response[i%length].productName;
         let h2 = document.createElement("h2");
-        h2.innerHTML = "BB Royal Maida";
+        h2.innerHTML = response[i%length].productName;
         let divSub = document.createElement("div");
         divSub.setAttribute("class","details");
         divSub.setAttribute("id",`details${i}`);
         let para1 = document.createElement("p");
-        para1.innerHTML = "MRP<sup><del> &#8377; 30 </del></sup>&#8377; 20";
+        para1.innerHTML =`MRP<sup><del> &#8377; ${Number(response[i%length].price)-10} </del></sup>&#8377; ${response[i%length].price}`;
         let para2 = document.createElement("p");
-        para2.innerHTML = "1 unit (500 g)";
+        para2.innerHTML = response[i%length].packSize;
         let button = document.createElement("button");
         button.setAttribute("class","cartbtn");
         button.innerHTML = "ADD TO CART";
@@ -54,6 +60,7 @@ function appendData(response){
         divSub.appendChild(button);
     }
     counter+=1;
+    // console.log(counter);
     temp=temp+750;
     if(counter==3){
       $('#product-container').append('<button id="uniqueButton" style="margin-left: 50%; background-color: powderblue;">Click</button><br /><br />');
