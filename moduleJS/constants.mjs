@@ -23,4 +23,6 @@ export class Constants{
     static ForgotPasswordMsg = document.getElementById("error-message");
     static OTPError = document.getElementById("otp-verify");
     static ResetError = document.getElementById("reset-error");
+    static cartmap = new Map();
+    static itemlist = "";
 }
