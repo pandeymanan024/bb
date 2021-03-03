@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Landing Page</title>
+
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="E-commerce website for groceries">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/landing.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/customerprofile.css"> -->
+
+</head>
+
+<body>
+
+    <header class="head">
+
+        <nav class="mob">
+
+            <ul class="mob-nav">
+
+                <li><a class="mob-icon" href=""><i class="fa fa-bars" aria-label="Menu"></i></a></li>
+                <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
+                <li><a class="mob-icon" href="../html/customerprofile.html"><i class="fa fa-user" aria-label="User Profile"></i></a></li>
+                <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+                <li><a class="mob-icon" href="#locator"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="logo">
+
+            <img src="../resources/logo.jpg" alt="website logo">
+            
+        </div>
+
+        <div class="search-bar">
+
+            <form id="search">
+
+                <input type="text" id="search" name="search" placeholder="Search Product" aria-label="search"/>
+
+                <button id="search-product" aria-label="search product">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+            </form>
+
+        </div>
+        
+        <div class="nav-menu">
+
+            <ul class="nav-list">
+
+                <li class="nav-item"><a href="../html/lg.html" class="nav-link">Sign In</a></li>
+                <li class="nav-item"><a href="../html/register1.html" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a href="#foot" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" id="cp">My Profile</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-basket" aria-label="Cart"></i>
+        </div> 
+
+    </header>
+
+    <!-- Pages to be loaded -->
+    <div class="cp"></div>
+
+
+    <!----------------------------------- Navigation Bar ----------------------------------->
+
+    <nav class="nav-container">
+
+        <ul class="ul-class">
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Categories</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Fruits</a>
+                        <a href="">Vegetables</a>
+                        <a href="">Gourmet & World Food</a>
+                        <a href="">Grains</a>
+                        <a href="">Drinks</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Vegetables</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Potato, Onion & Tomato</a>
+                        <a href="">Root Vegetables</a>
+                        <a href="">Cabbage & Cauliflower</a>
+                        <a href="">Beans & Drumsticks</a>
+                        <a href="">Organic Store</a>
+                    
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Fruits</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Banana</a>
+                        <a href="">Apples</a>
+                        <a href="">Papaya</a>
+                        <a href="">Kiwi, Melon & Citrus Fruits</a>
+                        <a href="">Seasonal Fruits</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Gourmet & World Food</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Biscuits & Cookies</a>
+                        <a href="">Breakfast Cereals</a>
+                        <a href="">Ice Cream & Desserts</a>
+                        <a href="">Chocolates</a>
+                        <a href="">Dairy & Cheese</a>
+
+                    </div>    
+                
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Grains</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Atta, Sooji & Flours</a>
+                        <a href="">Dal & Pulses</a>
+                        <a href="">Rice & Rice Products</a>
+                        <a href="">Salt, Sugar & Jaggery</a>
+                        <a href="">Masala & Spices</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li class="li-class">
+
+                <div class="dropdown"><a href="#">Drinks</a>
+
+                    <div class="dropdown-account">
+
+                        <a href="">Energy Drinks</a>
+                        <a href="">Tea & Coffee</a>
+                        <a href="">Health Drinks</a>
+                        <a href="">Fruit Juices</a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!----------------------------------- Carousel ----------------------------------->
+    
+    <section class="carousel-container">
+        
+        <img src="../resources/home.jpg" alt="home" id="carousel">
+
+    </section>
+
+    <!----------------------------------- Items ----------------------------------->
+
+    <main>
+
+        <div class="left-container">
+
+            <section class="outer-container">
+                                    
+                <h1>My Smart Basket</h1>
+
+                 <div class="item-container headings"></div>
+
+            </section>
+
+<!----------------------------------- Category ----------------------------------->
+
+            <section class="outer-container">
+
+                <h2>Best Sellers</h2>
+
+                <div class="category-container headings">
+
+                    <div class="category-big best-prod">
+
+                        <img src="../resources/veggies.jfif" alt="vegetables">
+                        <p>The Organic Store</p>
+
+                    </div>
+                    
+                    <div class="category-small">
+
+                        <div class="best-prod">
+
+                            <img src="../resources/gourmet.jpg" alt="gourmet">
+                            <p>Gourmet</p>
+
+                        </div>
+
+                        <div class="best-prod">
+
+                            <img src="../resources/biscuits.jpg" alt="biscuits">
+                            <p>Biscuits & Cookies</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="category-small">
+
+                        <div class="best-prod">
+
+                            <img src="../resources/fruits.jpg" alt="fruits">
+                            <p>Seasonal Fruits</p>
+
+                        </div>
+
+                        <div class="best-prod">
+
+                            <img src="../resources/cereals.jpg" alt="cereals">
+                            <p>Breakfast Cereals</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+<!----------------------------------- Daily Needs ----------------------------------->
+
+            <section class="outer-container">
+
+                <h2>Your Daily Needs</h2>
+
+                <div class="daily headings">
+
+                    <div class="daily-div"><img src="../resources/daily.jpg" alt="rice"><p>Rice & Rice Products</p></div>
+
+                    <div class="daily-div"><img src="../resources/daily2.jpg" alt="oil"><p>Oils & Ghee</p></div>
+
+                    <div class="daily-div"><img src="../resources/daily3.jpg" alt="spice"><p>Masala & Spices</p></div>
+
+                    <div class="daily-div"><img src="../resources/daily4.jpg" alt="flour"><p>Atta & Flours</p></div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+<!----------------------------------- Review ----------------------------------->
+                                        
+        <aside>
+
+            <h1 class="view">Popular Deals</h1>
+
+            <div class="review-container">
+
+                <div class="deals">
+
+                    <img src="../resources/deals1.png" alt="Discount">
+
+                    <h3>UPTO 60% OFF</h3>
+    
+                    <p>Pulses, Atta & Other Flours, Rice</p>
+                </div>
+
+                <div class="deals">
+
+                    <img src="../resources/deals2.png" alt="">
+
+                    <h3>BUY 1 GET 1</h3>
+
+                    <p>Biscuits, Cookies and Snacks</p>
+
+                </div> 
+
+                <div class="deals">
+
+                    <img src="../resources/deals3.png" alt="">
+                    <h3>UPTO 30% OFF</h3>
+
+                    <p>Fresh Fruits and Vegetables</p>
+
+                </div> 
+
+                <div class="deals">
+
+                    <img src="../resources/deals4.png" alt="">
+
+                    <h3>FLAT 20% OFF</h3>
+
+                    <p>Health Drinks and Beverages</p>
+
+                </div> 
+
+                <div class="deals">
+
+                    <img src="../resources/deals5.png" alt="">
+
+                    <h3>UPTO 50% OFF</h3>
+
+                    <p>Breakfast and Dairy</p>
+
+                </div>
+
+                 <div class="deals">
+
+                    <img src="../resources/deals6.png" alt="">
+
+                    <h3>COMBO OFFER</h3>
+
+                    <p>Staples and Instant Food</p>
+
+                </div>   
+
+            </div>  
+
+            <div class="store-locator" id="locator">
+
+                <h2>Locate your nearest store!</h2>
+
+                <iframe id="gmap_canvas" width="300" height="300" src="https://maps.google.com/maps?q=Grand%20Bhagwat%20Milan&t=k&z=19&ie=UTF8&iwloc=&output=embed" title="iframe"></iframe>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+<!----------------------------------- Footer ----------------------------------->
+                                    
+    <footer id="foot">
+
+        <div>
+
+            <ul>
+
+                <li><h3>Big Basket</h3></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">In News</a></li>
+                <li><a href="">Green Basket</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Privacy policy</a></li>
+                <li><a href="">Careers at big basket</a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Help</h3></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">bb Wallet FAQs</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Vendor Contact</a></li>
+                <li><a href="">E-Invoice Compliance for bb</a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Download Our App</h3></li>
+                <li><a href="https://play.google.com/store">
+                    <img src="../resources/gpicon.png" alt="play-store"></a></li>
+                <li><a href="https://www.apple.com/in/app-store/">
+                    <img src="../resources/aicon.png" alt="apple-store"></a></li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul>
+
+                <li><h3>Get Social With Us</h3></li>
+                <li class="dis"><i class="fa fa-facebook-official" aria-label="Facebook Link"></i></li>
+                <li class="dis"><i class="fa fa-pinterest-square" aria-label="Pinterest Link"></i></li>
+                <li class="dis"><i class="fa fa-twitter-square" aria-label="Twitter Link"></i></li>
+
+            </ul>
+
+        </div>
+
+    </footer>
+
+<script type="module" src="../javaScript/landing.mjs"></script>
+<script type="module" src="../javaScript/cartadd.mjs"></script>
+
+<!-- <script>
+    function addto(id){       
+    Constants.s=Constants.s+id+",";
+    localStorage.setItem("cartvalue",Constants.s);
+}
+</script> -->
+
+</body>
+</html>
