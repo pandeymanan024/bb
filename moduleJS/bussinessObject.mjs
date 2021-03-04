@@ -1,6 +1,6 @@
 import { Constants } from "../moduleJS/constants.mjs";
 import { Factory } from "../moduleJS/factory.mjs";
-import { Hashing } from "../moduleJS/hashing.mjs";
+import { Hashing } from "../moduleJS/hashing.js";
 import {CategoryController} from "../moduleJS/categoryController.mjs";
 
 

@@ -1,17 +1,24 @@
 import {Constants} from "../moduleJS/constants.mjs";
 var cart ="";
 window.onload = function(){
+
     cartload();
 }
     function cartload(){
+    
+        cart = JSON.parse(localStorage.getItem("map"));
+    
+        for(let i=0;i<cart.length;i++){
+            // var id = cart.split(',')[i];
+            console.log(cart[i].value,cart[i].key);
+            Constants.cartmap.set(cart[i].key,cart[i].value);
+        }
    
-    cart = localStorage.getItem("cartvalue");
     console.log(cart);
-    for(let i=0;i<cart.length%24;i++){
-    var id = cart.split(',')[i];
-    Constants.cartmap.set(id,1);
-    console.log(id);
-    var url = `https://bbecom-998a.restdb.io/rest/customer/${id}`; 
+    for(let i=0;i<cart.length;i++){
+    console.log(cart[i].value,cart[i].key);
+    console.log(Constants.cartmap);
+    var url = `https://bbecom-998a.restdb.io/rest/customer/${cart[i].key}`; 
 
     const options={
         headers: {
@@ -22,7 +29,7 @@ window.onload = function(){
     
     fetch(url,options)
         .then( (response) => { return response.json()
-        }).then( (data) => { 
+        }).then( (data) => {
         console.log(data);
             
     let outerdiv = document.createElement("div");
@@ -52,17 +59,26 @@ window.onload = function(){
     removebtn.id = data._id;
     
     removebtn.addEventListener("click",function() {
+        console.log(cart[i].value,cart[i].key);
         Constants.cartmap.set(this.id,0);
-        var s="";
+        console.log(Constants.cartmap);
+        // var s="";
+        var obj = [];
         Constants.cartmap.forEach((value, key) => {
-        if(value == 1){
-            s=s+key+",";
+            console.log(key,value);
+        if(value != 0){
+            // s=s+key+",";
+            // console.log(s);
             Constants.cartmap.set(key,0);
+            // console.log(key,value);
+            obj.push({value,key});
         }
-        Constants.itemlist=s;
+        console.log(obj);
+        // Constants.itemlist=s;
     })
     console.log(Constants.cartmap);
-    localStorage.setItem("cartvalue",Constants.itemlist);
+    localStorage.setItem("map",JSON.stringify(obj));
+    
     fun(); 
     });
 
@@ -79,7 +95,3 @@ function fun(){
     $(".main-inner-container").empty();
     cartload();
 }
-
-    
-
- 

@@ -5,6 +5,8 @@ import {Constants} from "../moduleJS/constants.mjs";
 //   Constants.s=Constants.s+id+",";
 //   localStorage.setItem("cartvalue",Constants.s);
 // }
+var cart = "";
+
 $(document).ready(function () {
   var a = ["home.jpg", "car2.jpg", "car3.jpg", "car4.jpg"];
   var i = 0;
@@ -74,12 +76,40 @@ $(document).ready(function () {
         btn.innerText = "ADD TO CART";
         btn.id = data[i]._id;
         itemDiv.appendChild(btn);
+        // cart = localStorage.getItem("cartvalue");
+        // console.log(cart);
+        // for(let k=0;k<cart.length%24;k++){
+        // var id = cart.split(',')[i];
+        // if (Constants.cartmap.has(this.id)){
+        // }
+        // else{
+        //     Constants.cartmap.set(id,1);
+        //     console.log(id);
+        // }
+        // }
         btn.addEventListener("click",function() {
-          Constants.itemlist=localStorage.getItem("cartvalue")+this.id+",";
-          localStorage.setItem("cartvalue",Constants.itemlist); 
+          if(Constants.cartmap.has(this.id)){
+            Constants.cartmap.set(this.id,Constants.cartmap.get(this.id)+1);
+          }
+          else{
+            console.log("Else");
+            Constants.cartmap.set(this.id,1);
+            // Constants.itemlist=localStorage.getItem("cartvalue")+this.id+",";
+            // localStorage.setItem("cartvalue",Constants.itemlist);
+          }
+          var obj = [];
+          Constants.cartmap.forEach((value, key) => {
+            // obj.value=key;
+            obj.push({key,value});
+            console.log(key,value);
+        })
+          localStorage.setItem("map",JSON.stringify(obj));
+          console.log(obj);
+          console.log(Constants.cartmap);
+          // Constants.itemlist=localStorage.getItem("cartvalue")+this.id+",";
+          // localStorage.setItem("cartvalue",Constants.itemlist);
         });
       }   
     });
 });
-
 
