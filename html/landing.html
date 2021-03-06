@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Landing Page</title>
-
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="E-commerce website for groceries">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/header-footer.css">
     <link rel="stylesheet" type="text/css" href="../css/landing.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/customerprofile.css"> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -25,11 +20,11 @@
 
             <ul class="mob-nav">
 
-                <li><a class="mob-icon" href=""><i class="fa fa-bars" aria-label="Menu"></i></a></li>
-                <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
-                <li><a class="mob-icon" href="../html/customerprofile.html"><i class="fa fa-user" aria-label="User Profile"></i></a></li>
-                <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+                <li><a class="mob-icon"><i class="fa fa-bars" aria-label="Menu" id="menu"></i></a></li>
                 <li><a class="mob-icon" href="#locator"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
+                <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
+                <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+                <li><a class="mob-icon"><i class="fa fa-user" aria-label="Logout"></i></a></li>
 
             </ul>
 
@@ -58,24 +53,19 @@
         <div class="nav-menu">
 
             <ul class="nav-list">
-
-                <li class="nav-item"><a href="../html/lg.html" class="nav-link">Sign In</a></li>
-                <li class="nav-item"><a href="../html/register1.html" class="nav-link">Sign Up</a></li>
-                <li class="nav-item"><a href="#foot" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" id="cp">My Profile</a></li>
-
+                <li class="nav-item"><a href="../html/login.html" class="nav-link partition" id="signin">Sign In</a></li>
+                <li class="nav-item"><a href="../html/register.html" class="nav-link partition" id="signup">Sign Up</a></li>
+                <li class="nav-item"><a href="#foot" class="nav-link partition">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" id="logout">Logout</a></li>
             </ul>
 
         </div>
 
-        <div class="cart">
+        <a href="../html/cart.html"><div class="cart">
             <i class="fa fa-shopping-basket" aria-label="Cart"></i>
-        </div> 
+        </div></a> 
 
     </header>
-
-    <!-- Pages to be loaded -->
-    <div class="cp"></div>
 
 
     <!----------------------------------- Navigation Bar ----------------------------------->
@@ -86,7 +76,7 @@
 
             <li class="li-class">
 
-                <div class="dropdown"><a href="#">Categories</a>
+                <div class="dropdown"><a href="../html/category.html">Categories</a>
 
                     <div class="dropdown-account">
 
@@ -213,7 +203,7 @@
                                     
                 <h1>My Smart Basket</h1>
 
-                 <div class="item-container headings"></div>
+                <div class="item-container headings"></div>
 
             </section>
 
@@ -440,14 +430,12 @@
 
     </footer>
 
-<script type="module" src="../javaScript/landing.mjs"></script>
-<!-- <script type="module" src="../javaScript/cartadd.mjs"></script> -->
+<script type="module" src="../javascript/landing.mjs"></script>
 
 <!-- <script>
-    function addto(id){       
-    Constants.s=Constants.s+id+",";
-    localStorage.setItem("cartvalue",Constants.s);
-}
+    function fun(){
+        $('main').load("../html/category.html");
+    }
 </script> -->
 
 </body>

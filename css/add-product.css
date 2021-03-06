@@ -1,0 +1,69 @@
+:root {
+  --bodyblack: #000000;
+  --bodywhite: #ffffff;
+  --offwhite: #ddd;
+  --themegreen: #339e1bfa;
+  --bodygraydark: #5a5959;
+  --bodygraylight: #708090;
+  --btn-hover: #adb9aaba;
+  --dropdowncolor: #e6e6e6;
+  --cart: #70809038;
+  --shadowcolor: rgba(146, 161, 176, 0.15);
+  --fontfamily: sans-serif;
+  --bodyfontsize: 17px;
+  --tablet-end: 900px;
+  --tablet-start: 601px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+}
+
+label,
+input {
+  margin-top: 3%;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+body {
+  font-family: Arial;
+  font-size: 25px;
+  padding: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid rgb(130, 26, 26);
+  border-radius: 1px;
+}
+
+.btn {
+  background-color: var(--themegreen);
+  color: var(--bodywhite);
+  float: left;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 200%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  box-shadow: 0 0 1rem 0 rgba(99, 123, 150, 0.329);
+}
+
+.btn:hover {
+  background-color: var(--bodygraydark);
+}

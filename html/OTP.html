@@ -7,6 +7,11 @@
   <meta content="Big Basket OTP Page" name="description">
   <title>Verify OTP</title>
   <link rel="stylesheet" type="text/css" href="../css/forgot-password.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" 
+  href= 
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -15,14 +20,14 @@
 
     <div class="inner-container">
 
-      <h1 class="otp-verif">OTP Verification</h1>
+      <h1 class="otp-verify">OTP Verification</h1>
       <a class="sign-in" href="../html/login.html">Go Back to Sign In</a>
       <p>Please enter the OTP sent to your email</p>
       <div id="otp-verify"></div>
-      <form class="form" autofocus="on" autocomplete="on">
+      <form class="form" autocomplete="on">
 
         <label for="OTP" class="otp">Enter OTP<span class="span">*</span></label>
-        <input id="OTP" type="number" name="otp" placeholder="OTP" maxlength=4 required>
+        <input id="OTP" type="number" name="otp" placeholder="OTP" maxlength=4 autofocus="on" required>
         <div>
           <a id="resend">Resend</a>
           <br>

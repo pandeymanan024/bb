@@ -6,16 +6,10 @@
 	<meta name="description" content="Category Page">
 
 	<title>Category Page</title>  
-
-	<!--------------linking css file-------------------->
-
-
     <link rel="stylesheet" type="text/css" href="../css/header-footer.css">
 	<link rel="stylesheet" type="text/css" href="../css/category.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="stylesheet" 
     href= 
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,11 +23,11 @@
 
             <ul class="mob-nav">
 
-                <li><a class="mob-icon" href="#"><i class="fa fa-bars" aria-label="Menu"></i></a></li>
+                <li><a class="mob-icon"><i class="fa fa-bars" aria-label="Menu" id="menu"></i></a></li>
+                <li><a class="mob-icon" href="#locator"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
                 <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
-                <li><a class="mob-icon" href="#"><i class="fa fa-user" aria-label="User Profile"></i></a></li>
-                <li><a class="mob-icon" href="#"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
-                <li><a class="mob-icon" href="#"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
+                <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+                <li><a class="mob-icon"><i class="fa fa-user" aria-label="Logout" id="logout"></i></a></li>
 
             </ul>
 
@@ -47,9 +41,9 @@
 
         <div class="search-bar">
 
-            <form>
+            <form id="search">
 
-                <input type="text" id="search" autocomplete="on" autofocus="on" name="search" placeholder="Search Product" aria-label="search"/>
+                <input type="text" id="search" name="search" placeholder="Search Product" aria-label="search"/>
 
                 <button id="search-product" aria-label="search product">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -62,24 +56,24 @@
         <div class="nav-menu">
 
             <ul class="nav-list">
-
-                <li class="nav-item"><a href="../html/lg.html" class="nav-link">Sign In</a></li>
-                <li class="nav-item"><a href="../html/register1.html" class="nav-link">Sign Up</a></li>
-                <li class="nav-item"><a href="#foot" class="nav-link">Contact Us</a></li>
-
+                <li class="nav-item"><a href="../html/login.html" class="nav-link partition" id="signin">Sign In</a></li>
+                <li class="nav-item"><a href="../html/register.html" class="nav-link partition" id="signup">Sign Up</a></li>
+                <li class="nav-item"><a href="#foot" class="nav-link partition">Contact Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="logout">Logout</a></li>
             </ul>
 
         </div>
 
-        <div class="cart">
+        <a href="../html/cart.html"><div class="cart">
             <i class="fa fa-shopping-basket" aria-label="Cart"></i>
-        </div> 
+        </div></a> 
 
     </header>
 
+
     <!----------------------------------- Navigation Bar ----------------------------------->
 
-    <nav class="nav-container">
+    <nav class="nav-bar">
 
         <ul class="ul-class">
 
@@ -196,6 +190,10 @@
 
     <!----------------------Product Container and Side Bar------------------>
 
+    <div id="filter-button" class="filter-button">
+        <button aria-label="filter" name="filter" id="filter">Filter <i class="fa fa-filter"></i></button> 
+    </div>
+
     <div class="container" id="container">
         
         <aside class="side-bar">
@@ -204,58 +202,51 @@
 
                 <div class="side-box">
 
-                    <div> 
 
-                        <label for="brand-input">Brand</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="brand-input" placeholder="Search by Brand">
-                        <button aria-label="brandsearch" name="button-search3" ><i class="fa fa-search icon" aria-hidden="true"></i></button>
-
-                    </div>
+                    <h1>Brand</h1>
 
                     <div class="brand-scroll">
 
-                        <label for="brand-chkbox1"><input type="checkbox" name="brand-chkbox1" id="brand-chkbox1" value="nestle"/>Nestle</label>
+                        <label for="brand-chkbox1"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox1" value="Amul"/> Amul</label>
 
-                        <label for="brand-chkbox2"><input type="checkbox" name="brand-chkbox2" id="brand-chkbox2" value="everest"/> Everest</label>
+                        <label for="brand-chkbox2"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox2" value="FRESHO"/> FRESHO</label>
 
-                        <label for="brand-chkbox3"><input type="checkbox" name="brand-chkbox3" id="brand-chkbox3" value="cadbury"/> Cadbury</label>
+                        <label for="brand-chkbox3"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox3" value="Cadbury"/> Cadbury</label>
 
-                        <label for="brand-chkbox4"><input type="checkbox" name="brand-chkbox4" id="brand-chkbox4" value="mdh"/> MDH</label>
+                        <label for="brand-chkbox4"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox4" value="MDH"/> MDH</label>
 
-                        <label for="brand-chkbox5"><input type="checkbox" name="brand-chkbox5" id="brand-chkbox5" value="kellogs"/> Kellog's</label>
+                        <label for="brand-chkbox5"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox5" value="Kellog's"/> Kellog's</label>
 
-                        <label for="brand-chkbox6"><input type="checkbox" name="brand-chkbox6" id="brand-chkbox6" value="catch"/> Catch</label>
+                        <label for="brand-chkbox6"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox6" value="Catch"/> Catch</label>
 
-                        <label for="brand-chkbox7"><input type="checkbox" name="brand-chkbox7" id="brand-chkbox7" value="tata"/> Tata</label>
+                        <label for="brand-chkbox7"><input type="checkbox" class = "filter-check" name="brand" id="brand-chkbox7" value="Tata"/> Tata</label>
 
                     </div>
                 </div>
 
                 <div class="side-box">
 
-                    <div> 
-
-                        <label for="seasonal-input">Seasonal</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="seasonal-input" placeholder="Search by Seasonal" >
-                        <button aria-label="seasonalsearch" name="button-search4"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
                     
-                    </div>
+
+                        <h1>Seasonal</h1>
+                    
+                    
 
                     <div class="brand-scroll">
                     
-                        <label for="seasonal-chkboxbox1"><input type="checkbox" name="seasonal-chkboxbox1" id="seasonal-chkboxbox1" value="winter"/> Winter</label>
+                        <label for="seasonal-chkboxbox1"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox1" value="Winter"/> Winter</label>
 
-                        <label for="seasonal-chkboxbox2"><input type="checkbox" name="seasonal-chkboxbox2" id="seasonal-chkboxbox2" value="autumn"/> Autumn</label>
+                        <label for="seasonal-chkboxbox2"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox2" value="Autumn"/> Autumn</label>
 
-                        <label for="seasonal-chkboxbox3"><input type="checkbox" name="seasonal-chkboxbox3" id="seasonal-chkboxbox3" value="spring"/> Spring</label>
+                        <label for="seasonal-chkboxbox3"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox3" value="Spring"/> Spring</label>
 
-                        <label for="seasonal-chkboxbox4"><input type="checkbox" name="seasonal-chkboxbox4" id="seasonal-chkboxbox4" value="summer"/> Summer</label>
+                        <label for="seasonal-chkboxbox4"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox4" value="summer"/> Summer</label>
 
-                        <label for="seasonal-chkboxbox5"><input type="checkbox" name="seasonal-chkboxbox5" id="seasonal-chkboxbox5" value="monsoon"/> Monsoon</label>
+                        <label for="seasonal-chkboxbox5"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox5" value="Monsoon"/> Monsoon</label>
 
-                        <label for="seasonal-chkboxbox6"><input type="checkbox" name="seasonal-chkboxbox6" id="seasonal-chkboxbox6" value="pooja"/> Pooja Items</label>
+                        <label for="seasonal-chkboxbox6"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox6" value="Pooja Items"/> Pooja Items</label>
 
-                        <label for="seasonal-chkboxbox7"><input type="checkbox" name="seasonal-chkboxbox7" id="seasonal-chkboxbox7" value="weekends"/> Weekends</label>
+                        <label for="seasonal-chkboxbox7"><input type="checkbox" class = "filter-check" name="seasonal" id="seasonal-chkboxbox7" value="Weekends"/> Weekends</label>
 
                     </div>
             
@@ -263,86 +254,51 @@
 
                 <div class="side-box">
 
-                    <div>
-
-                        <label for="origin-input">Origin</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="origin-input" placeholder="Search by Origin">
-                        <button aria-label="originsearch" name="button-search5" ><i class="fa fa-search icon" aria-hidden="true"></i></button>
-                
-                    </div>
-
-                
-                    <div class="brand-scroll">
                     
-                        <label for="origin1"><input type="checkbox" name="originbox1" id="origin1" value="australia"/> Australia</label>
 
-                        <label for="origin2"><input type="checkbox" name="originbox2" id="origin2" value="india"/> India</label>
-
-                        <label for="origin3"><input type="checkbox" name="originbox3" id="origin3" value="america"/> America</label>
-
-                        <label for="origin4"><input type="checkbox" name="originbox4" id="origin4" value="new-zealand"/> New Zealand</label>
-
-                        <label for="origin5"><input type="checkbox" name="originbox5" id="origin5" value="china"/> China</label>
-
-                        <label for="origin6"><input type="checkbox" name="originbox6" id="origin6" value="europe"/> Europe</label>
-
-                        <label for="origin7"><input type="checkbox" name="originbox7" id="origin7" value="england"/> England</label>
-                    
-                    </div>
-                
-                </div>
-
-                <div class="side-box">
-                
-                    <div> 
+                        <h1>Origin</h1>
                         
-                        <label for="price-input">Price</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="price-input" placeholder="Search by Price" >
-                        <button aria-label="pricesearch" name="button-search6"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
                 
-                    </div>
+                    
 
+                
                     <div class="brand-scroll">
                     
-                        <label for="price-chk1"><input type="checkbox" name="prchkbox1" id="price-chk1" value="lessthan20"/> Less than Rs 20</label>
+                        <label for="origin1"><input type="checkbox" class = "filter-check" name="origin" id="origin1" value="Australia"/> Australia</label>
 
-                        <label for="price-chk2"><input type="checkbox" name="prchkbox2" id="price-chk2" value="btw20-50"/> Rs 20 to Rs 50</label>
+                        <label for="origin2"><input type="checkbox" class = "filter-check" name="origin" id="origin2" value="India"/> India</label>
 
-                        <label for="price-chk3"><input type="checkbox" name="prchkbox3" id="price-chk3" value="btw50-100"/> Rs 50 to Rs 100</label>
+                        <label for="origin3"><input type="checkbox" class = "filter-check" name="origin" id="origin3" value="America"/> America</label>
 
-                        <label for="price-chk4"><input type="checkbox" name="prchkbox4" id="price-chk4" value="btw100-500"/> Rs 100 to Rs 500</label>
+                        <label for="origin4"><input type="checkbox" class = "filter-check" name="origin" id="origin4" value="New Zealand"/> New Zealand</label>
 
-                        <label for="price-chk5"><input type="checkbox" name="prchkbox5" id="price-chk5" value="btw500-1000"/> Rs 500 to Rs 1000</label>
+                        <label for="origin5"><input type="checkbox" class = "filter-check" name="origin" id="origin5" value="China"/> China</label>
 
-                        <label for="price-chk6"><input type="checkbox" name="prchkbox6" id="price-chk6" value="btw1000-2500"/> Rs 1000 to Rs 2500</label>
+                        <label for="origin6"><input type="checkbox" class = "filter-check" name="origin" id="origin6" value="Europe"/> Europe</label>
 
-                        <label for="price-chk7"><input type="checkbox" name="prchkbox7d" id="price-chk7" value="morethan2500"/> More than Rs 2500</label>
-
+                        <label for="origin7"><input type="checkbox" class = "filter-check" name="origin" id="origin7" value="England"/> England</label>
+                    
                     </div>
                 
                 </div>
 
                 <div class="side-box">
                 
-                    <div> 
 
-                        <label for="discount-input">Discount</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="discount-input" placeholder="Search by Discount" >
-                        <button aria-label="discountsearch" name="button-search7"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                        <h1>Discount</h1>
                     
-                    </div>
 
                     <div class="brand-scroll">
                     
-                        <label for="discount-chk1"><input type="checkbox" name="discount-chkbox1" id="discount-chk1" value="5to10"/> 5% - 10%</label>
+                        <label for="discount-chk1"><input type="checkbox" class = "filter-check" name="discount" id="discount-chk1" value="5% - 10%"/> 5% - 10%</label>
 
-                        <label for="discount-chk2"><input type="checkbox" name="discount-chkbox2" id="discount-chk2" value="10to20"/> 10% - 20%</label>
+                        <label for="discount-chk2"><input type="checkbox" class = "filter-check" name="discount" id="discount-chk2" value="10% - 20%"/> 10% - 20%</label>
 
-                        <label for="discount-chk3"><input type="checkbox" name="discount-chkbox3" id="discount-chk3" value="20to30"/> 20% - 30%</label>
+                        <label for="discount-chk3"><input type="checkbox" class = "filter-check" name="discount" id="discount-chk3" value="20% - 30%"/> 20% - 30%</label>
 
-                        <label for="discount-chk4"><input type="checkbox" name="discount-chkbox4" id="discount-chk4" value="30to50"/> 30% - 50%</label>
+                        <label for="discount-chk4"><input type="checkbox" class = "filter-check" name="discount" id="discount-chk4" value="30% - 50%"/> 30% - 50%</label>
 
-                        <label for="discount-chk5"><input type="checkbox" name="discount-chkbox5" id="discount-chk5" value="morethan50"/> More than 50%</label>
+                        <label for="discount-chk5"><input type="checkbox" class = "filter-check" name="discount" id="discount-chk5" value="More than 50%"/> More than 50%</label>
                 
                     </div>
                 
@@ -350,25 +306,22 @@
 
                 <div class="side-box">
                 
-                    <div> 
+                    
 
-                        <label for="pack-input">Pack Size</label>
-                        <input class="input-field" type="text" autocomplete="on" autofocus="on" id="pack-input" placeholder="Search by Pack Size" >
-                        <button aria-label="packsearch" name="button-search8"  ><i class="fa fa-search icon" aria-hidden="true"></i></button>
+                        <h1>Pack Size</h1>
                 
-                    </div>
 
                     <div class="brand-scroll">
                     
-                        <label for="pack-chk1"><input type="checkbox" name="pack-chkbox1" id="pack-chk1" value="pack1"/> 1 Pack</label>
+                        <label for="pack-chk1"><input type="checkbox" class = "filter-check" name="packSize" id="pack-chk1" value="1"/> 1 Pack</label>
 
-                        <label for="pack-chk2"><input type="checkbox" name="pack-chkbox2" id="pack-chk2" value="combo-pack2"/> Combo 2 Pack</label>
+                        <label for="pack-chk2"><input type="checkbox" class = "filter-check" name="packSize" id="pack-chk2" value="2"/> Combo 2 Pack</label>
 
-                        <label for="pack-chk3"><input type="checkbox" name="pack-chkbox3" id="pack-chk3" value="combo-pack3"/> Combo 3 Pack</label>
+                        <label for="pack-chk3"><input type="checkbox" class = "filter-check" name="packSize" id="pack-chk3" value="3"/> Combo 3 Pack</label>
 
-                        <label for="pack-chk4"><input type="checkbox" name="pack-chkbox4" id="pack-chk4" value="combo-pack4"/> Combo 4 Pack</label>
+                        <label for="pack-chk4"><input type="checkbox" class = "filter-check" name="packSize" id="pack-chk4" value="4"/> Combo 4 Pack</label>
 
-                        <label for="pack-chk5"><input type="checkbox" name="pack-chkbox5" id="pack-chk5" value="combo-pack5+"/> Combo 5+ Pack</label>
+                        <label for="pack-chk5"><input type="checkbox" class = "filter-check" name="packSize" id="pack-chk5" value="5"/> Combo 5+ Pack</label>
                 
                     </div>
             
@@ -380,13 +333,19 @@
 
             <!------------------------------Product view here--------------------->
 
-        <main class="product-container" id="product-container"> 
+        <main class="product-container" id="product-container">
+            <h2 class="loading">Loading...</h2>
+            <!-- <h2 class="not-found">Oops.. no such product found.</h2> -->
         
         </main>
+
     </div>
 
+    <div class = "show-products" id = "show-products">
+        <button id="uniqueButton" class="show-more">Show More Products</button>
+    </div>
+    
     <!--Footer starts-->
-
 
     <footer id="foot">
 
@@ -451,6 +410,7 @@
 
     </footer>
 
-    <script type="module" src="../javaScript/category.mjs"></script>
+    <script type="module" src="../javascript/category.mjs"></script>
+    <script type="module" src="../javascript/searchresults.mjs"></script>
 </body>
 </html>

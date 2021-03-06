@@ -31,15 +31,17 @@ body {
 
 .container {
   display: grid;
-
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 8fr;
   grid-gap: 10px;
+}
+
+.nav-bar{
+  margin-top: 0;
 }
 /*------------------------------Side_bar------------------------------------->*/
 
 .side-bar {
-  margin-top: 40px;
-  padding: 0px 5px;
+  padding: 0px 15px;
   width: 195px;
 }
 
@@ -73,12 +75,23 @@ body {
 
 /*--------------------product-container-------------------------------*/
 
-.container .product-container {
+.filter-button {
+  display: none;
+}
+
+h1 {
+  margin: 0 3px;
+  font-size: 20px;
+}
+
+.container .product-container,
+.filter-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 300px));
+  align-items: center;
+  justify-content: center;
   grid-gap: 10px;
-  margin-top: 30px;
-  padding-top: 20px;
   position: relative;
   width: 99.65%;
 }
@@ -122,11 +135,11 @@ body {
   padding: 0 0 0 20%;
 }
 
-.items img{
+.items img {
   height: 140px;
 }
 
-.cartbtn {
+.cart-btn {
   border-style: none;
   background-color: var(--themegreen);
   font-size: 12px;
@@ -140,6 +153,22 @@ body {
   cursor: pointer;
 }
 
+.show-products {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.show-more {
+  border-style: none;
+  background-color: var(--themegreen);
+  font-size: 12px;
+  height: 25px;
+}
+
+.show-more:hover {
+  background-color: var(--btn-hover);
+  cursor: pointer;
+}
 /*-------------------------------------Media Queries--------------------------------------*/
 
 /*-----------------Mobile-----------------*/
@@ -147,6 +176,40 @@ body {
 @media all and (max-width: 429px) {
   .container {
     grid-template-columns: 1fr;
+  }
+
+  .filter-button {
+    display: block;
+    padding-left: 5%;
+  }
+
+  .filter-button button {
+    font-size: 22px;
+    width: 100%;
+  }
+
+  .side-bar {
+    width: 100%;
+  }
+
+  .brand-scroll {
+    margin-left: 30%;
+  }
+
+  .filter-search {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .filter-search button {
+    font-size: large;
+    position: relative;
+    top: 1px;
+  }
+
+  .input-field {
+    height: 20px;
+    width: 310px;
   }
 
   .container .product-container {

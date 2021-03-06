@@ -1,11 +1,4 @@
 import {Constants} from "../moduleJS/constants.mjs";
-// Landing Page - Carousel
-//function addto(id){
-//   var addto = function(id){
-//   Constants.s=Constants.s+id+",";
-//   localStorage.setItem("cartvalue",Constants.s);
-// }
-var cart = "";
 
 $(document).ready(function () {
   var a = ["home.jpg", "car2.jpg", "car3.jpg", "car4.jpg"];
@@ -13,7 +6,7 @@ $(document).ready(function () {
   function changeImage() {
     $("#carousel").fadeOut(200, function () {
       i++;
-      if (i == a.length) {
+      if (i === a.length) {
         i = 0;
       }
       $("#carousel").attr({
@@ -23,35 +16,33 @@ $(document).ready(function () {
     });
     $("#carousel").fadeIn(200);
   }
-  var interval = setInterval(changeImage, 3000);
+  setInterval(changeImage, 3000);
 });
 
-// Landing Page add to cart
+// add to cart
 $(document).ready(function () {
-  //debugger;
   const options = {
-    method: "GET",
+    method: Constants.GET_METHOD,
     headers: {
       "Content-Type": "application/json",
-      "x-apikey": "602276113f9eb665a1689352",
+      "x-apikey": Constants.CUSTOMER_API_KEY,
     },
   };
   var data;
-  fetch("https://bbecom-998a.restdb.io/rest/customer", options)
+  fetch(Constants.CUSTOMER_URL, options)
     .then((response) => {
       return response.json();
     })
     .then((response) => {
       data = response;
-	  console.log(data);
 
       for (var i = 2; i < 6; i++) {
         let itemDiv = document.createElement("div");
-        itemDiv.className = "items";
+        itemDiv.className = Constants.ITEM_CLASS;
         document.getElementsByClassName("item-container")[0].appendChild(itemDiv);
 
         let im = document.createElement("img");
-        im.src = `https://bbecom-998a.restdb.io/media/${data[i].imageID}`;
+        im.src = Constants.MEDIA_URL + `/${data[i].imageID}`;
         im.alt = data.productName;
         itemDiv.appendChild(im);
 
@@ -60,56 +51,45 @@ $(document).ready(function () {
         itemDiv.appendChild(h);
 
         let detailsDiv = document.createElement("div");
-        detailsDiv.className = "details";
+        detailsDiv.className = Constants.DETAIL_CLASS;
         itemDiv.appendChild(detailsDiv);
 
         let productPrice = document.createElement("p");
-        productPrice.innerHTML = `MRP &#8377 ${data[i].price}`;
+        productPrice.innerHTML = Constants.PRICE_PREFIX + `${Number(data[i].price)-10}` + Constants.PRICE_SUFFIX + `${data[i].price}`;
         detailsDiv.appendChild(productPrice);
-
-        let productQuantity = document.createElement("p");
-        productQuantity.innerText = data[i].size+" unit ";
-        detailsDiv.appendChild(productQuantity);
         
         var btn = document.createElement("button");
-        btn.className = "cart-btn";
-        btn.innerText = "ADD TO CART";
+        btn.className = Constants.CART_BUTTON;
+        btn.innerText = Constants.ADD_TO_CART;
         btn.id = data[i]._id;
         itemDiv.appendChild(btn);
-        // cart = localStorage.getItem("cartvalue");
-        // console.log(cart);
-        // for(let k=0;k<cart.length%24;k++){
-        // var id = cart.split(',')[i];
-        // if (Constants.cartmap.has(this.id)){
-        // }
-        // else{
-        //     Constants.cartmap.set(id,1);
-        //     console.log(id);
-        // }
-        // }
+
         btn.addEventListener("click",function() {
-          if(Constants.cartmap.has(this.id)){
-            Constants.cartmap.set(this.id,Constants.cartmap.get(this.id)+1);
+          if(Constants.CART_MAP.has(this.id)){
+            Constants.CART_MAP.set(this.id,Constants.CART_MAP.get(this.id)+1);
           }
           else{
-            console.log("Else");
-            Constants.cartmap.set(this.id,1);
-            // Constants.itemlist=localStorage.getItem("cartvalue")+this.id+",";
-            // localStorage.setItem("cartvalue",Constants.itemlist);
+            Constants.CART_MAP.set(this.id,1);
           }
           var obj = [];
-          Constants.cartmap.forEach((value, key) => {
-            // obj.value=key;
+          Constants.CART_MAP.forEach((value, key) => {
             obj.push({key,value});
-            console.log(key,value);
         })
           localStorage.setItem("map",JSON.stringify(obj));
-          console.log(obj);
-          console.log(Constants.cartmap);
-          // Constants.itemlist=localStorage.getItem("cartvalue")+this.id+",";
-          // localStorage.setItem("cartvalue",Constants.itemlist);
         });
       }   
     });
 });
 
+// logout
+$('#logout').click(function(){
+  document.getElementById('logout').style.display = 'none';
+  document.getElementById('signin').style.display = 'block';
+  document.getElementById('signup').style.display = 'block';
+});
+
+//menu in mobile view
+$('#menu').click(function(){
+  $('.nav-container').toggle("slide");
+  document.getElementsByClassName('ul-class')[0].style.display = 'block';
+});

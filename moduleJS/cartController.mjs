@@ -1,6 +1,4 @@
 import { Factory } from "../moduleJS/factory.mjs";
-// import {$,jQuery} from 'jquery';
-
 export class CartController {
   constructor() {}
   main() {

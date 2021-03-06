@@ -7,7 +7,8 @@
     <meta content="Big Basket Reset Page" name="description">
 	<title>Reset Password</title>
     <link rel="stylesheet" type="text/css" href="../css/forgot-password.css">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 </head>
 <body>
 
@@ -15,12 +16,12 @@
 
         <div class="inner-container">
 
-          <h1 class="heading">Reset Password</h1>
+          <h1>Reset Password</h1>
           <div id="reset-error"></div>
           <form class="form" autocomplete="on">
 
             <label for="email" class="new-pass">Email</label>
-            <input id="email" type="email" class="password" name="email" placeholder="Enter your email" required>
+            <input id="email" type="email" class="password" name="email" placeholder="Enter your email" autofocus="on" required>
 
             <label for="new-password" class="new-pass">New Password</label>
             <input id="new-password" type="password" class="password" name="password" placeholder="Enter new Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
@@ -31,7 +32,7 @@
             <div id="passhidden" class="pass-instructions">
                 <span>Password should contain at least:</span>
                 <p id="capital" class="invalid">One Uppercase letter</p>
-                <p id="letter" class="invalid">One Lowercase</p>
+                <p id="letter" class="invalid">One Lowercase letter</p>
                 <p id="special" class="invalid">One special character{#?!@$%^&*-}</p>
                 <p id="number" class="invalid">One numeric character</p>
                 <p id="length" class="invalid">8 characters</p>
@@ -43,7 +44,7 @@
 
         </div>
     </main>
-    <script type="module" src="../javascript/reset.js"></script>
+    <script type="module" src="../javaScript/reset.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ body{
 }
 
 aside{
-  margin: 70px 0;
+  margin: 42px 0;
   width: 90%;
 }
 
@@ -38,9 +38,8 @@ button{
   border-style: none;
   background-color: var(--themegreen);
   font-size: 12px;
-  width: 90%;
+  padding: 5px 45px;
   text-align: center;
-  height: 30px;
 }
 
 .cart-btn:hover{
@@ -129,7 +128,7 @@ h1,h2{
 .items {
   border: 0.5px solid rgb(0 0 0 / 10%);
   width: auto;
-  height: 300px;
+  height: 225px;
   padding: 10% 3%;
   text-align: center;
 }
@@ -173,7 +172,7 @@ main{
 }
 
 .outer-container{
-  margin:8% auto;
+  margin:5% auto;
   width: 90%;
   text-align: center;
 }
@@ -192,9 +191,8 @@ p, label{
 }
 
 .store-locator{
-  margin: 50px auto;
+  margin: 25px auto 0 auto;
   text-align: center;
-  width: 85%;
 }
 
 .store-locator h5{
@@ -242,6 +240,10 @@ ul{
 
   .daily{
     grid-template-columns: 100%;
+  }
+
+  .daily img{
+    width: 70%;
   }
 
   .item-container{

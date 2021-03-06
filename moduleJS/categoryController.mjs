@@ -1,13 +1,14 @@
 import {ProductObject} from "../moduleJS/bussinessObject.mjs";
 import {CategoryView} from "../javaScript/category.mjs";
+import {Factory} from "../moduleJS/factory.mjs";
 
 export class CategoryController{
     constructor(){
         this.data;
     }
-    main(){
-        let co = new ProductObject();
-        co.getDatabase();
+    main(arr){
+        let productClass = Factory.productViewObject();
+        productClass.getDatabase(arr);
     }
     receiveDataFromModule(response){
         this.data = response;
@@ -15,7 +16,7 @@ export class CategoryController{
     }
 
     sendDataToView(data){
-        let view = new CategoryView();
+        let view = Factory.showImageObject();
         view.productDisplay(data);
     }
 }

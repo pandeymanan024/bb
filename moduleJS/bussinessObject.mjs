@@ -1,57 +1,55 @@
 import { Constants } from "../moduleJS/constants.mjs";
 import { Factory } from "../moduleJS/factory.mjs";
-import { Hashing } from "../moduleJS/hashing.js";
-import {CategoryController} from "../moduleJS/categoryController.mjs";
-
+import { Hashing } from "../moduleJS/hashing.mjs";
 
 export class RegisterBusinessObject {
   constructor() {}
 
   storeDataBase(formData) {
     this.request = Factory.getHttpRequest(
-      Constants.PostMethod,
-      Constants.UserUrl,
-      Constants.UserApiKey
+      Constants.POST_METHOD,
+      Constants.USER_URL,
+      Constants.USER_API_KEY
     );
     this.request.onload = () => {};
     this.request.send(JSON.stringify(formData));
   }
 
   getDatabase(formData) {
-    this.addMsg = Constants.AddMsg;
+    this.ADD_MSG = Constants.ADD_MSG;
     try {
       let data = JSON.stringify({ email: formData.email });
       this.request = Factory.getHttpRequest(
-        Constants.GetMethod,
-        `${Constants.UserUrl}?q=${data}`,
-        Constants.UserApiKey
+        Constants.GET_METHOD,
+        `${Constants.USER_URL}?q=${data}`,
+        Constants.USER_API_KEY
       );
       this.request.onload = () => {
         let response = JSON.parse(this.request.responseText);
         this.registerVerify(response[0], formData);
-        return this.addMsg;
+        return this.ADD_MSG;
       };
       this.request.send();
     } catch (e) {
-      Constants.RegisterHtmlElement.innerHTML = "Server is not responding";
+      Constants.REGISTER_HTML_ELEMENT.innerHTML = "Server is not responding";
     }
   }
 
   registerVerify(databaseObject, formData) {
     if (databaseObject === undefined){
       this.storeDataBase(formData);
-      this.addMsg = Constants.AddMsg;
-      Constants.RegisterHtmlElement.innerHTML = this.addMsg;
+      this.ADD_MSG = Constants.ADD_MSG;
+      Constants.REGISTER_HTML_ELEMENT.innerHTML = this.ADD_MSG;
     }
     else{
-      Constants.RegisterHtmlElement.innerHTML = this.addMsg;
+      Constants.REGISTER_HTML_ELEMENT.innerHTML = this.ADD_MSG;
       if (databaseObject.email === formData.email) {
-        this.addMsg = Constants.DupMsg;
-        Constants.RegisterHtmlElement.innerHTML = this.addMsg;
+        this.ADD_MSG = Constants.DUP_MSG;
+        Constants.REGISTER_HTML_ELEMENT.innerHTML = this.ADD_MSG;
       } else {
         this.storeDataBase(formData);
-        this.addMsg = Constants.AddMsg;
-        Constants.RegisterHtmlElement.innerHTML = this.addMsg;
+        this.ADD_MSG = Constants.ADD_MSG;
+        Constants.REGISTER_HTML_ELEMENT.innerHTML = this.ADD_MSG;
       }
     }
   }
@@ -62,17 +60,17 @@ export class LoginBusinessObject {
   getDatabase(formData) {
     const data = JSON.stringify({ email: formData.Username });
     this.request = Factory.getHttpRequest(
-      Constants.GetMethod,
-      `${Constants.UserUrl}?q=${data}`,
-      Constants.UserApiKey
+      Constants.GET_METHOD,
+      `${Constants.USER_URL}?q=${data}`,
+      Constants.USER_API_KEY
     );
     this.request.onload = () => {
       try {
         let response = JSON.parse(this.request.responseText);
         this.loginVerify(response[0], formData);
       } catch (e) {
-        Constants.LoginHtmlElement.innerHTML =
-          "Server Not Found or Invalid Entries";
+        Constants.LOGIN_HTML_ELEMENT.innerHTML =
+          "Invalid Entry";
       }
     };
     this.request.send();
@@ -81,10 +79,10 @@ export class LoginBusinessObject {
   loginVerify(databaseObject, formData) {
     if (databaseObject.email === formData.Username) {
       if (databaseObject.password === formData.Password) {
-        Constants.LoginHtmlElement.innerHTML = "Signed In";
+        document.location = "../html/landing.html";
       } else {
-        Constants.LoginHtmlElement.innerHTML =
-          "Server Not Found or Invalid Entries";
+        Constants.LOGIN_HTML_ELEMENT.innerHTML =
+          "Invalid Entry";
       }
     }
   }
@@ -94,22 +92,22 @@ export class ForgotPassword {
   constructor() {}
 
   otpGenerator(formData) {
-    Constants.OtpHtmlElement.value = Math.floor(1000 + Math.random() * 9000);
+    Constants.OTP_HTML_ELEMENT.value = Math.floor(1000 + Math.random() * 9000);
     let hash = new Hashing();
-    formData.otp = hash.encrypt(Constants.OtpHtmlElement.value);
+    formData.otp = hash.encrypt(Constants.OTP_HTML_ELEMENT.value);
     formData.timeStamp = Date.now();
     const data = JSON.stringify({ email: formData.email });
     this.request = Factory.getHttpRequest(
-      Constants.GetMethod,
-      `${Constants.UserUrl}?q=${data}`,
-      Constants.UserApiKey
+      Constants.GET_METHOD,
+      `${Constants.USER_URL}?q=${data}`,
+      Constants.USER_API_KEY
     );
     this.request.onload = () => {
       try {
         let response = JSON.parse(this.request.responseText);
         this.idFinder(response[0], formData);
       } catch (e) {
-        Constants.ForgotPasswordMsg.innerHTML = "Server Not Found";
+        Constants.FORGOT_PASSWORD_MSG.innerHTML = "Server Not Found";
       }
     };
     this.request.send();
@@ -120,20 +118,20 @@ export class ForgotPassword {
       let identity = databaseObject._id;
       localStorage.setItem("id", identity);
       this.request = Factory.getHttpRequest(
-        Constants.PutMethod,
-        Constants.UserUrl + "/" + databaseObject._id,
-        Constants.UserApiKey
+        Constants.PUT_METHOD,
+        Constants.USER_URL + "/" + databaseObject._id,
+        Constants.USER_API_KEY
       );
       this.request.onload = () => {
         try {
-          document.location = "../html/OTP.html";
+          document.location = "../html/otp.html";
         } catch (e) {}
       };
       this.request.send(JSON.stringify(formData));
-      Constants.ForgotPasswordMsg.innerHTML = "OTP Sent";
+      Constants.FORGOT_PASSWORD_MSG.innerHTML = "OTP Sent";
       let serviceID = "gmail";
       let templateID = "template_4abmypz";
-      emailjs.sendForm(serviceID, templateID, Constants.FormId);
+      emailjs.sendForm(serviceID, templateID, Constants.FORM_ID);
     }
   }
 }
@@ -147,27 +145,27 @@ export class ResetPassword {
       delete formData.email;
       delete formData.confirmPassword;
       this.putDatabase(databaseId, formData);
-      Constants.ResetError.innerHTML = "Password reset successful";
+      Constants.RESET_ERROR.innerHTML = "Password reset successful";
       return;
     }
     else {
-      Constants.ResetError.innerHTML = "User not found";
+      Constants.RESET_ERROR.innerHTML = "User not found";
     }
   }
 
   getDatabase(formData) {
     const data = JSON.stringify({ email: formData.email });
     this.request = Factory.getHttpRequest(
-      Constants.GetMethod,
-      `${Constants.UserUrl}?q=${data}`,
-      Constants.UserApiKey
+      Constants.GET_METHOD,
+      `${Constants.USER_URL}?q=${data}`,
+      Constants.USER_API_KEY
     );
     this.request.onload = () => {
       try {
         let response = JSON.parse(this.request.responseText);
         this.resetValidate(response[0], formData);
       } catch (e) {
-        Constants.ResetError.innerHTML = "Server Not Found";
+        Constants.RESET_ERROR.innerHTML = "Server Not Found";
       }
     };
     this.request.send();
@@ -175,9 +173,9 @@ export class ResetPassword {
 
   putDatabase(databaseId, databaseObject) {
     this.request = Factory.getHttpRequest(
-      Constants.PutMethod,
-      Constants.UserUrl + "/" + databaseId,
-      Constants.UserApiKey
+      Constants.PUT_METHOD,
+      Constants.USER_URL + "/" + databaseId,
+      Constants.USER_API_KEY
     );
     this.request.send(JSON.stringify(databaseObject));
   }
@@ -191,29 +189,27 @@ export class OtpValidate {
 
   getDatabase(formData) {
     this.request = Factory.getHttpRequest(
-      Constants.GetMethod,
-      Constants.UserUrl + "/" + localStorage.getItem("id"),
-      Constants.UserApiKey
+      Constants.GET_METHOD,
+      Constants.USER_URL + "/" + localStorage.getItem("id"),
+      Constants.USER_API_KEY
     );
     this.request.onload = () => {
       try {
         let hash = new Hashing();
         let response = JSON.parse(this.request.responseText);
+        console.log(Date.now() - response.timeStamp,hash.decrypt(response.otp),formData.otp);
         if (
           Date.now() - response.timeStamp < 40000 &&
-          hash.decrypt(response.otp) == formData.otp
+          hash.decrypt(response.otp) === formData.otp
         ) {
-          console.log("Otp Verified");
           document.location = "../html/reset.html";
         } else if (
           Date.now() - response.timeStamp < 40000 &&
           hash.decrypt(response.otp) != formData.otp
         ) {
-          console.log("Wrong OTP");
-          Constants.OTPError.innerHTML = "Wrong OTP";
+          Constants.OTP_ERROR.innerHTML = "Wrong OTP";
         } else {
-          console.log("OTP Expired");
-          Constants.OTPError.innerHTML = "OTP expired";
+          Constants.OTP_ERROR.innerHTML = "OTP expired";
         }
       } catch (e) {}
     };
@@ -225,11 +221,28 @@ export class ImageStore{
   constructor(){
 
   }
+
+  getDatabaseEmptyImage(){
+    const obj={
+      productName:document.getElementById("product-name").value,
+      price:document.getElementById("price").value,
+      category:document.getElementById("category").value,
+      brand:document.getElementById("brand").value,
+      seasonal:document.getElementById("seasonal").value,
+      origin:document.getElementById("origin").value,
+      discount:document.getElementById("discount").value,
+      packSize:document.getElementById("pack-size").value,
+      imageID:Constants.DEFAULT_IMAGE_UPLOAD_ID
+    }
+    this.postData(obj);
+  }
+
   getDatabase(formData){
-    this.request = Factory.getMediaHttpRequest(Constants.PostMethod,Constants.MediaUrl,Constants.CustomerApiKey);
+    this.request = Factory.getMediaHttpRequest(Constants.POST_METHOD,Constants.MEDIA_URL,Constants.CUSTOMER_API_KEY);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
+      let valueimageID = response.split(`"`)[11];
       const obj={
         productName:document.getElementById("product-name").value,
         price:document.getElementById("price").value,
@@ -239,15 +252,23 @@ export class ImageStore{
         origin:document.getElementById("origin").value,
         discount:document.getElementById("discount").value,
         packSize:document.getElementById("pack-size").value,
-        imageID:response.split(`"`)[11]
+        imageID:valueimageID
       }
-      this.postData(obj);
+      if (valueimageID !== undefined){
+        Object.assign(obj, {imageID: Constants.IMAGE_UPLOAD_ID});
+        this.postData(obj);
+        console.log("Done");
+      }
+      else{
+        Object.assign(obj, {imageID: valueimageID = response.split(`"`)[11]});
+        this.postData(obj);
     }
+  }
     this.request.send(formData);
   }
 
   postData(formData){
-    this.request = Factory.getHttpRequest(Constants.PostMethod,Constants.CustomerUrl,Constants.CustomerApiKey);
+    this.request = Factory.getHttpRequest(Constants.POST_METHOD,Constants.CUSTOMER_URL,Constants.CUSTOMER_API_KEY);
     this.request.onload = ()=>{
       const response = this.request.responseText;
       console.log(response);
@@ -256,74 +277,32 @@ export class ImageStore{
   }
 }
 
-// export class Cart{
-//   constructor(){
-
-//   }
-
-//   add(){
-//     let outerdiv = document.createElement("div");
-//     outerdiv.className = "cart-items";
-//     document.getElementsByClassName("main-inner-container")[0].appendChild(outerdiv);
-    
-//     let innerdiv1 = document.createElement("div");
-//     innerdiv1.className="menu";
-//     outerdiv.appendChild(innerdiv1);
-    
-//     let innerdiv2 = document.createElement("div");
-//     let n = document.createElement("h2");
-//     n.className="name-tag";
-//     innerdiv2.appendChild(n);
-//     innerdiv2.className="main";
-//     outerdiv.appendChild(innerdiv2);
-    
-    
-//     let innerdiv3 = document.createElement("div");
-//     let p = document.createElement("h2");
-//     p.className="price-tag";
-//     innerdiv3.appendChild(p);
-//     innerdiv3.className="checkout";
-//     outerdiv.appendChild(innerdiv3);
-
-//     var apikey="602276113f9eb665a1689352"; 
-//     var id='6036213e9fc7b60c0001fad3';
-//     var url=`https://bbecom-998a.restdb.io/rest/customer/${id}`;
-//     const options = {
-//     method: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'x-apikey': apikey
-//     }
-    
-//     };
-
-//     const f2 = () => {
-
-//         fetch(url,options)
-//         .then( (response) => { return response.json()
-//         }).then( (data) => { 
-//             n.innerText=data.productName
-//             p.innerHTML='<span>&#8377;</span>'+data.price
-//         })
-//     }
-//     f2();
-//   }
-// }
 
 export class ProductObject{
   constructor(){
     this.count=0;
   }
-  getDatabase(){
+  getDatabase(arr){
+    if(arr.length===0){
     this.request = Factory.getHttpRequest(
-      Constants.GetMethod,
-      Constants.CustomerUrl,
-      Constants.CustomerApiKey
+      Constants.GET_METHOD,
+      Constants.CUSTOMER_URL,
+      Constants.CUSTOMER_API_KEY
     );
+    }
+    else{
+      let obj = JSON.stringify({"$or":arr});
+      let url = `${Constants.CUSTOMER_URL}?q=${obj}`;
+      this.request = Factory.getHttpRequest(
+        Constants.GET_METHOD,
+        url,
+        Constants.CUSTOMER_API_KEY
+      );
+    }
     this.request.onload = ()=>{
       const response = JSON.parse(this.request.responseText);
-      let con = new CategoryController();
-      con.receiveDataFromModule(response);
+      let controller = Factory.categoryImageObject();
+      controller.receiveDataFromModule(response);
     };
     this.request.send();
   }

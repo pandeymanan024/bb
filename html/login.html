@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="description" content="Login page"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <link
       rel="stylesheet"
@@ -23,8 +24,8 @@
 
       <div class="inner-container">
 
-        <div class="header">
-        <h1 class="sign-in">Sign in</h1>
+        <div class="sign-in">
+        <h1>Sign in</h1>
         <p class="smalltext-fontf">
           or
           <a class="create-account" href="../html/register.html">create an account</a>
@@ -46,12 +47,11 @@
             <label for="password">Password<span class="span">*</span></label>
             <input id="password" type="password" name="Password" placeholder="Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>            
             <div class="show-pass">
-            <input id="pass-status" class="pass-status" type="checkbox" onclick="viewPassword()">
+            <input id="pass-status" class="pass-status" type="checkbox" >
             <span class="pass-status1">Show Password</label>
             </div>
 
             <input type="submit" id="sign-in" class="button-sign-in" value="Sign in">
-            <!-- id for submit -->
             
             <a href="../html/forgot-password.html">Forgot Password?</a>
 
@@ -62,7 +62,8 @@
       </div>
 
     </main>
-
+  
 	<script type="module" src="../javaScript/login.js"></script>
+  
   </body>
 </html>

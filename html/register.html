@@ -15,7 +15,7 @@
       crossorigin="anonymous"/>
    
     <link rel="stylesheet" type="text/css" href="../css/register.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -23,8 +23,8 @@
 
       <div class="inner-container">
 
-        <div class="header">
-        <h1 class="sign-up">Sign Up</h1>
+        <div class="sign-up">
+        <h1>Sign Up</h1>
         <a class="sign-in" href="../html/login.html">Go Back to Sign In</a>
         <div id="message" class="msg"></div>
         </div>
@@ -48,12 +48,11 @@
           <input type="password" id="password" placeholder="Password" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required> 
           
           <div class="show-pass"> 
-          <input id="pass-status" class="pass-status" type="checkbox" onclick="viewPassword()">
+          <input id="pass-status" class="pass-status" type="checkbox">
           <span for="pass-status" class="pass-status1">Show Password</span>
             
           </div>
-          <!-- <i id="pass-status" class="fa fa-eye" aria-label="Show Password" onclick="viewPassword()"></i>
-           -->
+
           <div id="passhidden" class="pass-instructions">
            <span>Password should contain at least:</span>
            <p id="capital" class="invalid">One Uppercase letter</p>

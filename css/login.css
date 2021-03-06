@@ -1,20 +1,27 @@
 :root {
-  --bgwhite: #f2f2f2;
-  --bggreen: #339e1bfa;
-  --bodygray: #5a5959;
   --bodyblack: #000000;
   --bodywhite: #ffffff;
-  --dropgray: #708090;
+  --offwhite: #ddd;
+  --themegreen: #339e1bfa;
+  --bodygraydark: #5a5959;
+  --bodygraylight: #708090;
+  --btn-hover: #adb9aaba;
+  --dropdowncolor: #e6e6e6;
+  --bgwhite: #f2f2f2;
+  --themegreen: #339e1bfa;
+  --bodygray: #5a5959;
   --footergreen: #215208;
   --disablegreen: #94cd88fa;
+  --fontfamily: sans-serif;
   --red: #ff0000;
 }
 
 body{
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: var(--fontfamily);
   font-size: 16px;
 }
-.header{
+
+.sign-in{
   padding-left:20px
 }
 
@@ -29,8 +36,6 @@ input[type=submit]:hover,button:hover{
 }
 
 .outer-container{
-  display: grid;
-  grid-template-rows: auto;
   width: 470px;
   border: 2px solid var(--bodyblack);
   border-radius: 5px;
@@ -38,7 +43,6 @@ input[type=submit]:hover,button:hover{
   margin: 80px auto;
   padding-bottom: 15px;
 }
-
 
 .inner-container label{
   display: block;
@@ -59,7 +63,7 @@ input[type=submit]:hover,button:hover{
 }
 
 .inner-container a{
-  color: var(--bggreen);
+  color: var(--themegreen);
   margin-top: 10px;
 }
 
@@ -78,20 +82,12 @@ input[type=password]:focus,input[type=email]:focus,input[type=text]{
 }
 
 input[type=submit]{
-  background-color: var(--bggreen);
+  background-color: var(--themegreen);
   color: var(--bgwhite);
   padding: 15px 30px;
   margin: 10px auto;
   display: block;
 }
-
-.fa-eye,.fa-eye-slash{
-  right: 560px;
-  top: 365px;
-  opacity: .6;
-  position: absolute;
-  cursor: pointer;
-} 
 
 input[id="submit"]:disabled{
   background-color:var(--disablegreen);
@@ -104,14 +100,15 @@ input[id="submit"]:disabled{
   color: var(--red);
 }
 
-
 .pass-status1{
   font-size:14px;
 }
+
 .show-pass{
   margin-bottom:15px;
-  margin-right:122px;
+  margin-right:136px;
 }
+
 input[id="password"]{
   margin-bottom:6px;
 }

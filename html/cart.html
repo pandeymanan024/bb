@@ -6,12 +6,10 @@
     <link href="../css/cart.css" rel="stylesheet">
     <link href="../css/header-footer.css" rel="stylesheet">
     <link href='https://www.bbassets.com/monsters-inc/static/images/favicon.ico' rel='icon' type='image/x-icon'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta content="Big Basket Cart Page" name="description">
-    <meta content="HTML, CSS, JavaScript" name="keywords">
-    <meta content="Manan Pandey" name="author">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Cart Page</title>
 </head>
@@ -25,11 +23,11 @@
 
         <ul class="mob-nav">
 
-            <li><a class="mob-icon" href=""><i class="fa fa-bars" aria-label="Menu"></i></a></li>
-            <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
-            <li><a class="mob-icon" href="../html/customerprofile.html"><i class="fa fa-user" aria-label="User Profile"></i></a></li>
-            <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+            <li><a class="mob-icon"><i class="fa fa-bars" aria-label="Menu" id="menu"></i></a></li>
             <li><a class="mob-icon" href="#locator"><i class="fa fa-map-marker" aria-label="store locator"></i></a></li>
+            <li><a class="mob-icon" href="#"><img class="mob-logo" src="../resources/mon-logo.jpg" alt="logo icon"></a></li>
+            <li><a class="mob-icon" href="../html/cart.html"><i class="fa fa-shopping-basket" aria-label="Cart"></i></a></li>
+            <li><a class="mob-icon"><i class="fa fa-user" aria-label="Logout" id="logout"></i></a></li>
 
         </ul>
 
@@ -43,7 +41,7 @@
 
     <div class="search-bar">
 
-        <form>
+        <form id="search">
 
             <input type="text" id="search" name="search" placeholder="Search Product" aria-label="search"/>
 
@@ -58,18 +56,17 @@
     <div class="nav-menu">
 
         <ul class="nav-list">
-
-            <li class="nav-item"><a href="../html/lg.html" class="nav-link">Sign In</a></li>
-            <li class="nav-item"><a href="../html/register1.html" class="nav-link">Sign Up</a></li>
-            <li class="nav-item"><a href="#foot" class="nav-link">Contact Us</a></li>
-
+            <li class="nav-item"><a href="../html/login.html" class="nav-link partition" id="signin">Sign In</a></li>
+            <li class="nav-item"><a href="../html/register.html" class="nav-link partition" id="signup">Sign Up</a></li>
+            <li class="nav-item"><a href="#foot" class="nav-link partition">Contact Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" id="logout">Logout</a></li>
         </ul>
 
     </div>
 
-    <div class="cart">
+    <a href="../html/cart.html"><div class="cart">
         <i class="fa fa-shopping-basket" aria-label="Cart"></i>
-    </div> 
+    </div></a> 
 
 </header>
 
@@ -79,12 +76,11 @@
         <h1 class="heading_name">Cart Page</h1>
     </div>
 
-        <div class="main-inner-container"></div>
+    <div class="main-inner-container"></div>
 
-        <div class="checkout-button">
-            <button class="book-button" href="../html/bb-orderpage.html">CheckOut</button>
-        </div>
-
+    <div class="checkout-button">
+        <button class="book-button" href="../html/bb-orderpage.html">CheckOut</button>
+    </div>
 
 
 <!-------------------------------------------------Footer------------------------------------------------>
@@ -151,8 +147,7 @@
     </div>
 
 </footer>
-<script type="module" src="../javascript/addtocart.mjs"></script>
-
+<script type="module" src="../javascript/add-to-cart.mjs"></script>
 </body>
 
 </html>

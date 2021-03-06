@@ -38,7 +38,7 @@ export class ResetController {
   constructor() {}
   main(event) {
     this.data = Factory.getEventData(event);
-    if (this.data.password == this.data.confirmPassword) {
+    if (this.data.password === this.data.confirmPassword) {
       this.ro = Factory.passwordResetObject();
       this.ro.getDatabase(this.data);
     } else {

@@ -1,110 +1,21 @@
-:root{
+:root {
   --bodyblack: #000000;
   --bodywhite: #ffffff;
   --offwhite: #ddd;
   --themegreen: #339e1bfa;
   --bodygraydark: #5a5959;
-  --bodygraylight: #abbcce;
+  --bodygraylight: #708090;
   --btn-hover: #adb9aaba;
   --dropdowncolor: #e6e6e6;
   --cart: #70809038;
-  --shadowcolor: rgba(146,161,176,.15); 
+  --shadowcolor: rgba(146, 161, 176, 0.15);
   --fontfamily: sans-serif;
   --bodyfontsize: 17px;
 }
 
-.cart{
-  background-color: var(--themegreen);
-  color: var(--bodyblack);
-  text-align: center;
-  font-size: 35px;
-  padding: 5%;
-  width: fit-content;
-}
+/*-------------------------------------Header--------------------------------------*/
 
-.cart:hover, .search-bar button:hover{
-  border: 1px solid rgb(0 0 0 / 50%);
-  cursor: pointer;
-}
-
-.dis{
-  display: inline-block;
-}
-
-.dropdown{
-  font-size: 16px;
-  text-align: center;
-  position: relative;
-  align-self: center;
-}
-
-.dropdown-account {
-  display: none; 
-  position: absolute;
-  background-color: var(--dropdowncolor);
-  width: 100%;
-  margin: 9.5px 0;
-  z-index: 1;
-}
-
-.dropdown a{
-  display: block;
-}
-
-.dropdown-account a{
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  color: var(--bodyblack);
-}
-
-.dropdown-account a:hover, .dropdown-account a:active{
-  color: var(--themegreen);
-}
-
-.dropdown:hover .dropdown-account{
-  display: block;
-}
-
-footer{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-column-gap: 5%;
-  border-top: 1px solid var(--bodygraydark);
-  width: 90%;
-  margin: auto;
-}
-
-footer .fa{
-  padding: 2%;
-  font-size:50px;
-}
-
-footer h3{
-  color: var(--bodyblack);
-  font-weight: bold;
-  font-size: 17px;
-}
-
-footer li{
-  padding: 2%;
-  margin: 2%;
-}
-
-footer li a{
-  color: var(--bodygraydark);
-}
-
-footer li a:hover{
-  color: var(--themegreen);
-}
-
-footer ul{
-  list-style-type: none;
-}
-
-.head{
+.head {
   position: fixed;
   display: grid;
   grid-template-columns: 22.5% 35% 35% 7.5%;
@@ -117,169 +28,285 @@ footer ul{
   border: 1px solid rgb(0 0 0 / 10%);
 }
 
-.li-class{
-  padding: 5%;
-  text-align: center;
-  cursor: pointer;
-}
+/*-----------------Search-Bar and Logo-----------------*/
 
-.li-class a{
-  text-decoration: none;
-  color: var(--bodyblack);
-  font-weight: bold;
-}
-
-.mob-nav .fa{
-  font-size: 25px;
-}
-
-.mob, .mob-nav, .mob-search-bar{
-  display: none;
-}
-
-.nav-container{
-  margin-top: 8%;
-}
-
-.nav-item{
-  display: inline-block;
-  padding: 0 3%;
-  border-right: 1px solid var(--bodyblack);
-}
-
-.nav-link{
-  text-decoration: none;
-  color: var(--bodyblack);
-  cursor: pointer;
-}
-
-.nav-link:hover, .nav-link:active{
-  color: var(--btn-hover);
-}
-
-.nav-list{
-  list-style: none;
-  padding: 0;
-}
-
-.search-bar button{
+.search-bar button {
   background-color: var(--themegreen);
   color: var(--bodyblack);
   border: none;
   outline: none;
   font-size: 17px;
-  padding: 2%;
+  padding: 7px;
   border-radius: 5px;
 }
 
-.search-bar input{
+.search-bar input {
   width: 80%;
-  padding: 2%;
+  padding: 5px;
 }
 
-.ul-class{
+/*----------For Mobile--------------*/
+.mob,
+.mob-nav,
+.mob-search-bar {
+  display: none;
+}
+
+.mob-nav .fa {
+  font-size: 25px;
+}
+
+/*-----------------Navigation List-----------------*/
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--bodyblack);
+  padding: 0 20px;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: var(--btn-hover);
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.partition{
+  border-right: 1px solid var(--bodyblack);
+}
+
+#signin, #signup{
+  display: none;
+}
+
+.cart {
+  background-color: var(--themegreen);
+  color: var(--bodyblack);
+  text-align: center;
+  font-size: 35px;
+  padding: 10px;
+  width: fit-content;
+}
+
+.cart:hover,
+.search-bar button:hover {
+  border: 1px solid rgb(0 0 0 / 50%);
+  cursor: pointer;
+}
+
+/*-----------------Dropdown List-----------------*/
+
+.nav-container {
+  margin-top: 8%;
+}
+
+.ul-class {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   background-color: var(--themegreen);
   align-items: center;
   margin: 0;
+  list-style: none;
 }
 
+.li-class {
+  padding: 5%;
+  text-align: center;
+}
+
+.li-class a {
+  text-decoration: none;
+  color: var(--bodyblack);
+  font-weight: bold;
+}
+
+.dropdown {
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  align-self: center;
+}
+
+.dropdown-account {
+  display: none;
+  position: absolute;
+  background-color: var(--dropdowncolor);
+  width: 100%;
+  margin: 10px 0;
+  z-index: 1;
+}
+
+.dropdown a {
+  display: block;
+}
+
+.dropdown-account a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: var(--bodyblack);
+}
+
+.dropdown-account a:hover,
+.dropdown-account a:active {
+  color: var(--themegreen);
+}
+
+.dropdown:hover .dropdown-account {
+  display: block;
+}
+
+/*-------------------------------------Footer--------------------------------------*/
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5%;
+  border-top: 1px solid var(--bodygraydark);
+  width: 90%;
+  margin: auto;
+}
+
+footer h3 {
+  color: var(--bodyblack);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+footer .fa {
+  padding: 2%;
+  font-size: 50px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  padding: 2%;
+  margin: 2%;
+}
+
+footer li a {
+  color: var(--bodygraydark);
+  text-decoration: none;
+}
+
+footer li a:hover {
+  color: var(--bodygraylight);
+}
+
+.dis {
+  display: inline-block;
+}
 
 /*-------------------------------------Media Queries--------------------------------------*/
 
-
 /*-----------------Tablet-----------------*/
 
-/*To do: Use of variables and revisit after scss session*/
-
-@media all and (max-width: 900px) and (min-width: 601px){
-
+@media all and (max-width: 900px) and (min-width: 601px) {
   .search-bar input {
     width: 75%;
   }
 
-  .search-bar button{
+  .search-bar button {
     font-size: 17px;
   }
 
-  .head img{
+  .head img {
     width: 125px;
   }
 
-  .cart{
+  .cart {
     font-size: 25px;
     margin: auto;
   }
-  
-  .nav-item{
+
+  .nav-item {
     font-size: 15px;
   }
 
-  .nav-container{
+  .nav-container {
     margin-top: 9%;
   }
 
-  footer{
-    grid-template-columns: repeat(2,1fr);
+  footer {
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 5%;
   }
 }
 
 /*-----------------Mobile-----------------*/
 
-@media all and (max-width: 600px){
-
-  .head{
+@media all and (max-width: 600px) {
+  .head {
     width: 100%;
     grid-template-columns: 100%;
+    text-align: center;
   }
 
-  .mob{
+  .mob {
     display: block;
   }
 
-  .mob-logo{
+  .mob-logo {
     width: 25px;
     height: auto;
   }
 
-  .mob-nav{
+  .mob-nav {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(5,1fr);
+    list-style-type: none;
+    grid-template-columns: repeat(5, 1fr);
     background-color: var(--themegreen);
     padding: 2%;
     margin: 0;
   }
 
-  .mob-icon{
-    align-self: center;
-    color: var(--offwhite);
+  .mob-nav li {
     margin: auto;
   }
 
-  .search-bar{
+  .mob-icon {
+    color: var(--offwhite);
+  }
+
+ .search-bar {
     margin: 2%;
   }
 
-  .search-bar button{
-    padding: 2%;
-    text-align: center;
-    font-size: 17px;
+  search-bar input {
+    width: 85%;
   }
 
-  footer{
-    grid-template-columns: repeat(1,1fr);
+  footer {
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 5%;
   }
 
-  footer ul{
+  footer ul {
     padding: 0;
   }
 
-  .logo, .ul-class, .nav-list, .dropdown-account, .cart{
-    display: none;
+  .li-class{
+    border-bottom: 1px solid var(--bodygraydark);
   }
 
+  .logo,
+  .ul-class,
+  .nav-list,
+  .cart {
+    display: none;
+    padding: 0;
+    margin-top: 25%;
+  }
 }

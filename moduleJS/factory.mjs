@@ -1,5 +1,7 @@
-import { RegisterBusinessObject, OtpValidate, ResetPassword,ForgotPassword, LoginBusinessObject, ImageStore} from "../moduleJS/bussinessObject.mjs";
+import { RegisterBusinessObject, OtpValidate, ResetPassword,ForgotPassword, LoginBusinessObject, ImageStore, ProductObject} from "../moduleJS/bussinessObject.mjs";
 import { Constants } from "../moduleJS/constants.mjs";
+import {CategoryView} from "../javaScript/category.mjs";
+import {CategoryController} from "../moduleJS/categoryController.mjs";
 
 export class Factory {
   constructor() {}
@@ -12,17 +14,18 @@ export class Factory {
 
   static getMediaData(){
     this.formData = new FormData();
-    this.files = document.getElementById("image").files;
+    this.files = document.getElementById("image-id").files;
     for(let i=0;i<this.files.length;i++){
         this.formData.append('myfile',this.files[i],this.files[i].name);
     }
     console.log(this.formData.getAll('myfile'));
+    console.log(this.formData.length);
     return this.formData;
   }
 
   static registration = "";
   static registerObject() {
-    if (this.registration == "") {
+    if (this.registration === "") {
       this.registration = new RegisterBusinessObject();
     }
     return this.registration;
@@ -30,7 +33,7 @@ export class Factory {
 
   static login = "";
   static loginObject() {
-    if (this.login == "") {
+    if (this.login === "") {
       this.login = new LoginBusinessObject();
     }
     return this.login;
@@ -38,7 +41,7 @@ export class Factory {
 
   static forgot = "";
   static forgotObject() {
-    if (this.forgot == "") {
+    if (this.forgot === "") {
       this.forgot = new ForgotPassword();
     }
     return this.forgot;
@@ -46,7 +49,7 @@ export class Factory {
 
   static cart = "";
   static cartObject() {
-    if (this.cart == "") {
+    if (this.cart === "") {
       this.cart = new Cart();
     }
     return this.cart;
@@ -54,7 +57,7 @@ export class Factory {
 
   static passwordReset = "";
   static passwordResetObject() {
-    if (this.passwordReset == "") {
+    if (this.passwordReset === "") {
       this.passwordReset = new ResetPassword();
     }
     return this.passwordReset;
@@ -62,7 +65,7 @@ export class Factory {
 
   static otpInstance = "";
   static otpObject() {
-    if (this.otpInstance == "") {
+    if (this.otpInstance === "") {
       this.otpInstance = new OtpValidate();
     }
     return this.otpInstance;
@@ -70,24 +73,48 @@ export class Factory {
 
   static imageStoreInstance = "";
   static imageStoreObject() {
-    if (this.imageStoreInstance == "") {
+    if (this.imageStoreInstance === "") {
       this.imageStoreInstance = new ImageStore();
     }
     return this.imageStoreInstance;
   }
 
+  static productImage = "";
+  static showImageObject() {
+    if (this.productImage === "") {
+      this.productImage = new CategoryView();
+    }
+    return this.productImage;
+  }
+
+  static categoryObject = "";
+  static categoryImageObject() {
+    if (this.categoryObject === "") {
+      this.categoryObject = new CategoryController();
+    }
+    return this.categoryObject;
+  }
+
+  static productObject = "";
+  static productViewObject() {
+    if (this.productObject === "") {
+      this.productObject = new ProductObject();
+    }
+    return this.productObject;
+  }
+
   static getHttpRequest(method, url, key) {
     var request = new XMLHttpRequest();
     request.open(method, url, true);
-    request.setRequestHeader(Constants.ContentType, Constants.DataType);
-    request.setRequestHeader(Constants.ApiKey, key);
+    request.setRequestHeader(Constants.CONTENT_TYPE, Constants.DATA_TYPE);
+    request.setRequestHeader(Constants.API_KEY, key);
     return request;
   }
 
   static getMediaHttpRequest(method, url, key) {
     var request = new XMLHttpRequest();
     request.open(method, url, true);
-    request.setRequestHeader(Constants.ApiKey, key);
+    request.setRequestHeader(Constants.API_KEY, key);
     return request;
   }
 }
